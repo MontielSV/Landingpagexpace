@@ -104,7 +104,7 @@ const closeMenu = () => {
 
 
 document
-  .querySelectorAll("nav a")
+  .querySelectorAll(".nav-link-track")
   .forEach((link) => {
 
     link.addEventListener(

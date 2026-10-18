@@ -15,6 +15,22 @@
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/52142627.js"></script>
   <!-- End HubSpot Embed Code -->
 
+  <!-- ContentSquare -->
+  <script>
+    window._csq = window._csq || [];
+    window._csq.push(['setSiteId', '17b7862dd287f']);
+    window._csq.push(['trackPageView']);
+    (function() {
+      var cs = document.createElement('script');
+      cs.type = 'text/javascript';
+      cs.async = true;
+      cs.src = 'https://cdn.contentsquare.net/cs.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(cs, s);
+    })();
+  </script>
+  <!-- End ContentSquare -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,6 +48,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
+
+  <!-- Estilos del Banner de Cookies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -54,7 +73,7 @@
 
 
   <!-- =========================
-       HEADER
+       1. HEADER
   ========================== -->
 
   <header class="header">
@@ -67,7 +86,7 @@
         aria-label="Ir al inicio de SPAXE">
 
         <img
-          src="https://montielsv.github.io/Spaxelogo/assets/spaxe-logo.png"
+          src="assets/logo-spaxe.png"
           alt="SPAXE"
           decoding="async">
 
@@ -88,40 +107,41 @@
 
 
       <nav
+        class="main-navbar"
         id="mainNav"
         aria-label="Navegación principal">
 
-        <a href="#beneficios">
-          Beneficios
-        </a>
+        <ul>
+          <li>
+            <a href="#inicio" class="nav-link-track">
+              Inicio
+            </a>
+          </li>
 
-        <a href="#mision">
-          Misión
-        </a>
+          <li>
+            <a href="#mision" class="nav-link-track">
+              Nosotros
+            </a>
+          </li>
 
-        <a href="#cohetes">
-          Cohetes
-        </a>
+          <li>
+            <a href="#cohetes" class="nav-link-track">
+              05 / Cohetes
+            </a>
+          </li>
 
-        <a href="#testimonios">
-          Opiniones
-        </a>
-
-        <a href="#faq">
-          FAQ
-        </a>
+          <li>
+            <a
+              href="#registro"
+              class="nav-link-track cta-track"
+              data-cta="nav_contacto">
+              Contacto
+            </a>
+          </li>
+        </ul>
 
       </nav>
 
-
-      <a
-        class="nav-button cta-track"
-        href="#registro"
-        data-cta="nav_unirme">
-
-        Unirme ↗
-
-      </a>
 
     </div>
 
@@ -133,7 +153,7 @@
 
 
     <!-- =========================
-         1. HERO
+         2. HERO
     ========================== -->
 
     <section
@@ -323,7 +343,7 @@
 
 
     <!-- =========================
-         2. BENEFICIOS
+         3. BENEFICIOS
     ========================== -->
 
     <section
@@ -338,7 +358,7 @@
           <div>
 
             <span class="section-tag">
-              01 / BENEFICIOS
+              03 / BENEFICIOS
             </span>
 
 
@@ -453,7 +473,7 @@
 
 
     <!-- =========================
-         3. CTA
+         4. CTA
     ========================== -->
 
     <section
@@ -466,7 +486,7 @@
         <div>
 
           <span class="section-tag orange">
-            02 / PRIMERA MISIÓN
+            04 / PRIMERA MISIÓN
           </span>
 
           <h2>
@@ -494,7 +514,7 @@
 
 
     <!-- =========================
-         4. EXPLICACIÓN
+         5. EXPLICACIÓN
     ========================== -->
 
     <section
@@ -507,7 +527,7 @@
         <div class="mission-copy reveal">
 
           <span class="section-tag orange">
-            03 / EXPLICACIÓN
+            05 / EXPLICACIÓN
           </span>
 
 
@@ -588,17 +608,10 @@
 
       </div>
 
-    </section>
 
-
-
-    <!-- =========================
-         5. COHETES
-    ========================== -->
-
-    <section
-      class="rockets"
-      id="cohetes">
+      <div
+        class="rockets"
+        id="cohetes">
 
       <div class="container">
 
@@ -608,7 +621,7 @@
           <div>
 
             <span class="section-tag orange">
-              04 / COHETES
+              05 / COHETES
             </span>
 
 
@@ -672,7 +685,7 @@
 
 
               <button
-                class="details-btn"
+                class="details-btn btn-more-info-rockets"
                 type="button"
                 aria-pressed="false">
 
@@ -726,7 +739,7 @@
 
 
               <button
-                class="details-btn"
+                class="details-btn btn-more-info-rockets"
                 type="button"
                 aria-pressed="false">
 
@@ -779,7 +792,7 @@
 
 
               <button
-                class="details-btn"
+                class="details-btn btn-more-info-rockets"
                 type="button"
                 aria-pressed="false">
 
@@ -806,8 +819,76 @@
 
       </div>
 
-    </section>
+      </div>
 
+
+      <div
+        class="section mission-log"
+        id="misiones">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="section-tag orange">
+              05 / BITÁCORA DE MISIÓN
+            </span>
+
+            <h2>
+              DE LA IDEA<br>
+              <span>A LA ÓRBITA.</span>
+            </h2>
+
+          </div>
+
+          <p>
+            Cada misión espacial sigue una secuencia de decisiones,
+            pruebas y operaciones para convertir una idea en exploración.
+          </p>
+
+        </div>
+
+        <div class="mission-steps">
+
+          <article class="mission-step reveal">
+            <span class="mission-step-number">01 / DISEÑO</span>
+            <div class="mission-step-icon" aria-hidden="true">⌁</div>
+            <h3>PREPARAR</h3>
+            <p>
+              Se define el objetivo y se preparan el vehículo,
+              los instrumentos y el plan de vuelo.
+            </p>
+          </article>
+
+          <article class="mission-step reveal">
+            <span class="mission-step-number">02 / LANZAMIENTO</span>
+            <div class="mission-step-icon" aria-hidden="true">↗</div>
+            <h3>DESPEGAR</h3>
+            <p>
+              El cohete inicia su ascenso y lleva la carga hacia
+              la trayectoria prevista.
+            </p>
+          </article>
+
+          <article class="mission-step reveal">
+            <span class="mission-step-number">03 / EXPLORACIÓN</span>
+            <div class="mission-step-icon" aria-hidden="true">◎</div>
+            <h3>DESCUBRIR</h3>
+            <p>
+              Ya en su destino, la misión recopila información
+              y amplía nuestro conocimiento del espacio.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+      </div>
+
+    </section>
 
 
     <!-- =========================
@@ -824,7 +905,7 @@
         <div class="center">
 
           <span class="section-tag">
-            05 / TESTIMONIOS
+            06 / TESTIMONIOS
           </span>
 
 
@@ -937,7 +1018,7 @@
         <div class="hubspot-info reveal">
 
           <span class="section-tag orange">
-            06 / ÚNETE A LA MISIÓN
+            07 / ÚNETE A LA MISIÓN
           </span>
 
 
@@ -1033,7 +1114,7 @@
         <div>
 
           <span class="section-tag">
-            07 / PREGUNTAS
+            08 / PREGUNTAS
           </span>
 
 
@@ -1192,7 +1273,7 @@
         <div>
 
           <span class="section-tag orange">
-            08 / PRÓXIMA MISIÓN
+            09 / PRÓXIMA MISIÓN
           </span>
 
 
@@ -1234,7 +1315,7 @@
 
 
         <img
-          src="https://montielsv.github.io/Spaxelogo/assets/spaxe-logo.png"
+          src="assets/logo-spaxe.png"
           alt="SPAXE"
           loading="lazy"
           decoding="async">
@@ -1247,11 +1328,7 @@
           </a>
 
           <a href="#mision">
-            Misión
-          </a>
-
-          <a href="#cohetes">
-            Cohetes
+            Explicación
           </a>
 
           <a href="#testimonios">
@@ -1260,6 +1337,13 @@
 
           <a href="#faq">
             FAQ
+          </a>
+
+          <a
+            class="download-logo-btn"
+            href="assets/logo-spaxe.png"
+            download="logo-spaxe.png">
+            Descargar logo ↓
           </a>
 
         </div>
@@ -1277,6 +1361,51 @@
 
   </main>
 
+  <a
+    class="whatsapp-button cta-track"
+    href="https://api.whatsapp.com/send?phone=573203658652&amp;text=!Hola!%0AQuieres%20aprender%20mas%20sobre%20Spaxe%20%3F%0AMi%20nombre%20es%20Sebastian%0ACrea%20tu%20cohete%20con%20nosotros"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Escríbenos por WhatsApp"
+    data-cta="whatsapp_contact">
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false">
+      <path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.4A10 10 0 1 0 12 2Zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.8.9-3.1-.2-.3A8 8 0 1 1 12 19.8Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.4.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .2-1.1-.1-.1-.3-.2-.5-.3Z"/>
+    </svg>
+
+    <span>WhatsApp</span>
+
+  </a>
+
+  <!-- Script del Banner de Cookies -->
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#000000",
+            "text": "#ffffff"
+          },
+          "button": {
+            "background": "#25d366",
+            "text": "#ffffff"
+          }
+        },
+        "theme": "classic",
+        "position": "bottom-right",
+        "content": {
+          "message": "Este sitio web utiliza cookies para garantizar que obtengas la mejor experiencia en Spaxe.",
+          "dismiss": "Aceptar todas",
+          "link": "Leer más",
+          "href": "https://montielsv.github.io/Landingpagexpace/"
+        }
+      })
+    });
+  </script>
 
   <script src="script.js" defer></script>
 
