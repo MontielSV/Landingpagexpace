@@ -5,7 +5,7 @@
 ========================== */
 
 const EMAILJS_PUBLIC_KEY = "Wqdt_1DgoeOwM_XH4";
-const EMAILJS_SERVICE_ID = "service_8y4ss2b";
+const EMAILJS_SERVICE_ID = "service_zn78ani";
 const EMAILJS_TEMPLATE_ID = "template_vf1uo67";
 
 // Inicializar EmailJS cuando el SDK esté disponible.
