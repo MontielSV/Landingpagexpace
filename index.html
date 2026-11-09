@@ -1,73 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T79ZSRN4');
-  </script>
-  <!-- End Google Tag Manager -->
 
-  <!-- HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/52142627.js"></script>
-  <!-- End HubSpot Embed Code -->
-
-  <!-- ContentSquare -->
-  <script>
-    window._csq = window._csq || [];
-    window._csq.push(['setSiteId', '17b7862dd287f']);
-    window._csq.push(['trackPageView']);
-    (function() {
-      var cs = document.createElement('script');
-      cs.type = 'text/javascript';
-      cs.async = true;
-      cs.src = 'https://cdn.contentsquare.net/cs.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(cs, s);
-    })();
-  </script>
-  <!-- End ContentSquare -->
+  <!-- =========================
+       CONFIGURACIÓN GENERAL
+  ========================== -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="SPAXE — Explora, descubre y conoce los cohetes que llevan la exploración espacial más lejos.">
+    content="SPAXE: explora el universo de los cohetes, descubre la tecnología espacial y conoce nuevas fronteras de exploración.">
 
+  <meta name="keywords"
+    content="SPAXE, cohetes, exploración espacial, tecnología espacial, misiones espaciales, espacio">
+
+  <meta name="author" content="SPAXE">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#080b12">
+  <meta name="color-scheme" content="dark">
 
-  <title>SPAXE — Explora más allá</title>
+  <title>SPAXE | Explora más allá del espacio</title>
+
+  <!-- Open Graph -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SPAXE | Explora más allá">
+  <meta
+    property="og:description"
+    content="Descubre los cohetes, la tecnología y las nuevas fronteras de la exploración espacial.">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="SPAXE">
+
+  <!-- =========================
+       OPTIMIZACIÓN DE RECURSOS
+  ========================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect" href="https://js.hs-scripts.com">
+  <link rel="preconnect" href="https://js.hsforms.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Estilos del Banner de Cookies -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+  <!-- CSS de cookies -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+
+  <!-- CSS principal -->
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- =========================
+       GOOGLE TAG MANAGER
+  ========================== -->
+
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({
+        'gtm.start':new Date().getTime(),
+        event:'gtm.js'
+      });
+
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+
+      f.parentNode.insertBefore(j,f);
+
+    })(window,document,'script','dataLayer','GTM-T79ZSRN4');
+  </script>
+
+  <!-- =========================
+       HUBSPOT
+  ========================== -->
+
+  <script
+    type="text/javascript"
+    id="hs-script-loader"
+    async
+    defer
+    src="https://js.hs-scripts.com/52142627.js">
+  </script>
+
+  <!-- =========================
+       CONTENTSQUARE
+  ========================== -->
+
+  <script>
+    window._csq = window._csq || [];
+
+    window._csq.push([
+      'setSiteId',
+      '17b7862dd287f'
+    ]);
+
+    window._csq.push([
+      'trackPageView'
+    ]);
+
+    (function() {
+
+      var cs = document.createElement('script');
+
+      cs.type = 'text/javascript';
+      cs.async = true;
+      cs.src = 'https://cdn.contentsquare.net/cs.js';
+
+      var s = document.getElementsByTagName('script')[0];
+
+      s.parentNode.insertBefore(cs, s);
+
+    })();
+  </script>
+
 </head>
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
+  <!-- GOOGLE TAG MANAGER NOSCRIPT -->
+
   <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-T79ZSRN4"
       height="0"
       width="0"
-      style="display:none;visibility:hidden">
+      style="display:none;visibility:hidden"
+      title="Google Tag Manager">
     </iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
+
+  <!-- FONDO ESPACIAL -->
 
   <div class="stars" aria-hidden="true"></div>
 
@@ -87,7 +162,9 @@
 
         <img
           src="assets/logo-spaxe.png"
-          alt="SPAXE"
+          alt="Logo de SPAXE"
+          width="170"
+          fetchpriority="high"
           decoding="async">
 
       </a>
@@ -112,6 +189,7 @@
         aria-label="Navegación principal">
 
         <ul>
+
           <li>
             <a href="#inicio" class="nav-link-track">
               Inicio
@@ -138,51 +216,32 @@
               Contacto
             </a>
           </li>
+
         </ul>
 
       </nav>
-
 
     </div>
 
   </header>
 
 
-
   <main>
-
 
     <!-- =========================
          2. HERO
     ========================== -->
 
-    <section
-      class="hero"
-      id="inicio">
+    <section class="hero" id="inicio">
 
-      <div
-        class="planet planet-one"
-        aria-hidden="true">
-      </div>
+      <div class="planet planet-one" aria-hidden="true"></div>
+      <div class="planet planet-two" aria-hidden="true"></div>
 
-      <div
-        class="planet planet-two"
-        aria-hidden="true">
-      </div>
-
-      <div
-        class="orbit orbit-one"
-        aria-hidden="true">
-      </div>
-
-      <div
-        class="orbit orbit-two"
-        aria-hidden="true">
-      </div>
+      <div class="orbit orbit-one" aria-hidden="true"></div>
+      <div class="orbit orbit-two" aria-hidden="true"></div>
 
 
       <div class="container hero-grid">
-
 
         <div class="hero-copy reveal-on-load">
 
@@ -190,12 +249,10 @@
             MARCA · ESPACIO · TECNOLOGÍA
           </span>
 
-
           <h1>
             VE MÁS<br>
             <span>ALLÁ.</span>
           </h1>
-
 
           <p>
             SPAXE convierte la exploración espacial en una experiencia visual
@@ -211,10 +268,9 @@
               href="#cohetes"
               data-cta="hero_explorar">
 
-              Descubrir SPAXE <b>↗</b>
+              Descubrir SPAXE <b aria-hidden="true">↗</b>
 
             </a>
-
 
             <a
               class="button ghost cta-track"
@@ -252,15 +308,14 @@
 
         <div
           class="rocket-stage"
-          aria-label="Ilustración de un cohete SPAXE">
+          role="img"
+          aria-label="Ilustración de un cohete de SPAXE en el espacio">
 
-          <div class="rocket-glow"></div>
+          <div class="rocket-glow" aria-hidden="true"></div>
 
-
-          <div class="rocket">
+          <div class="rocket" aria-hidden="true">
 
             <div class="rocket-nose"></div>
-
 
             <div class="rocket-body">
 
@@ -273,7 +328,6 @@
               <div class="rocket-line"></div>
 
             </div>
-
 
             <div class="fin fin-left"></div>
             <div class="fin fin-right"></div>
@@ -303,12 +357,11 @@
     </section>
 
 
+    <!-- =========================
+         MARQUEE
+    ========================== -->
 
-    <!-- MARQUEE -->
-
-    <div
-      class="marquee"
-      aria-hidden="true">
+    <div class="marquee" aria-hidden="true">
 
       <div class="marquee-track">
 
@@ -341,17 +394,13 @@
     </div>
 
 
-
     <!-- =========================
          3. BENEFICIOS
     ========================== -->
 
-    <section
-      class="section values"
-      id="beneficios">
+    <section class="section values" id="beneficios">
 
       <div class="container">
-
 
         <div class="section-head">
 
@@ -361,7 +410,6 @@
               03 / BENEFICIOS
             </span>
 
-
             <h2>
               EXPLORA.<br>
               <span>APRENDE.</span><br>
@@ -369,7 +417,6 @@
             </h2>
 
           </div>
-
 
           <p>
             SPAXE reúne una identidad espacial y contenido sobre cohetes
@@ -380,89 +427,66 @@
         </div>
 
 
-
         <div class="value-grid">
-
 
           <article class="value-card reveal">
 
-            <div class="value-icon">
+            <div class="value-icon" aria-hidden="true">
               ✦
             </div>
 
-            <span>
-              01
-            </span>
+            <span>01</span>
 
-            <h3>
-              INFORMACIÓN
-            </h3>
+            <h3>INFORMACIÓN</h3>
 
             <p>
               Conoce características y conceptos relacionados con
               vehículos espaciales.
             </p>
 
-            <strong>
-              CONOCER /
-            </strong>
+            <strong>CONOCER /</strong>
 
           </article>
 
 
-
           <article class="value-card blue reveal">
 
-            <div class="value-icon">
+            <div class="value-icon" aria-hidden="true">
               ⌁
             </div>
 
-            <span>
-              02
-            </span>
+            <span>02</span>
 
-            <h3>
-              TECNOLOGÍA
-            </h3>
+            <h3>TECNOLOGÍA</h3>
 
             <p>
               Acércate al mundo de los lanzamientos desde una experiencia
               digital sencilla.
             </p>
 
-            <strong>
-              ENTENDER /
-            </strong>
+            <strong>ENTENDER /</strong>
 
           </article>
 
 
-
           <article class="value-card dark reveal">
 
-            <div class="value-icon">
+            <div class="value-icon" aria-hidden="true">
               ↗
             </div>
 
-            <span>
-              03
-            </span>
+            <span>03</span>
 
-            <h3>
-              EXPLORACIÓN
-            </h3>
+            <h3>EXPLORACIÓN</h3>
 
             <p>
               Descubre misiones y despierta la curiosidad por lo que
               existe más allá.
             </p>
 
-            <strong>
-              EXPLORAR /
-            </strong>
+            <strong>EXPLORAR /</strong>
 
           </article>
-
 
         </div>
 
@@ -471,17 +495,13 @@
     </section>
 
 
-
     <!-- =========================
          4. CTA
     ========================== -->
 
-    <section
-      class="cta-strip"
-      id="cta1">
+    <section class="cta-strip" id="cta1">
 
       <div class="container cta-strip-inner">
-
 
         <div>
 
@@ -496,7 +516,6 @@
 
         </div>
 
-
         <a
           class="button primary cta-track"
           href="#registro"
@@ -506,23 +525,18 @@
 
         </a>
 
-
       </div>
 
     </section>
-
 
 
     <!-- =========================
          5. EXPLICACIÓN
     ========================== -->
 
-    <section
-      class="mission"
-      id="mision">
+    <section class="mission" id="mision">
 
       <div class="container mission-grid">
-
 
         <div class="mission-copy reveal">
 
@@ -530,19 +544,16 @@
             05 / EXPLICACIÓN
           </span>
 
-
           <h2>
             LA TECNOLOGÍA<br>
             APUNTA <span>MÁS LEJOS.</span>
           </h2>
-
 
           <p>
             SPAXE presenta la exploración espacial desde tres ideas:
             conocer los cohetes, entender su tecnología y despertar
             interés por las misiones que buscan nuevos horizontes.
           </p>
-
 
           <a
             href="#cohetes"
@@ -556,335 +567,313 @@
         </div>
 
 
-
         <div class="mission-panel reveal">
-
 
           <div class="panel-top">
 
-            <span>
-              SISTEMA SPAXE
-            </span>
-
-            <span>
-              EN LÍNEA
-            </span>
+            <span>SISTEMA SPAXE</span>
+            <span>EN LÍNEA</span>
 
           </div>
 
-
-          <div class="radar">
+          <div class="radar" aria-hidden="true">
 
             <div class="radar-circle c1"></div>
             <div class="radar-circle c2"></div>
             <div class="radar-circle c3"></div>
 
             <div class="radar-line"></div>
-
             <div class="radar-dot"></div>
 
           </div>
 
-
           <div class="coordinates">
 
-            <span>
-              LAT. 28.5729° N
-            </span>
-
-            <span>
-              LONG. 80.6490° O
-            </span>
-
-            <span>
-              ALT. 000 / 001
-            </span>
+            <span>LAT. 28.5729° N</span>
+            <span>LONG. 80.6490° O</span>
+            <span>ALT. 000 / 001</span>
 
           </div>
 
-
         </div>
-
 
       </div>
 
 
-      <div
-        class="rockets"
-        id="cohetes">
+      <!-- =========================
+           COHETES
+      ========================== -->
 
-      <div class="container">
+      <div class="rockets" id="cohetes">
 
+        <div class="container">
 
-        <div class="section-head light-head">
+          <div class="section-head light-head">
 
-          <div>
+            <div>
 
-            <span class="section-tag orange">
-              05 / COHETES
-            </span>
-
-
-            <h2>
-              DESCUBRE LO QUE<br>
-              ESTÁ <span>ALLÁ ARRIBA.</span>
-            </h2>
-
-          </div>
-
-
-          <div class="rocket-counter">
-
-            <strong>
-              03
-            </strong>
-
-            <span>
-              OBJETOS DE MISIÓN
-            </span>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="rocket-cards">
-
-
-          <article
-            class="rocket-card featured reveal"
-            data-rocket="explorer">
-
-            <div class="card-number">
-              01
-            </div>
-
-
-            <div class="card-art">
-
-              <div class="mini-rocket"></div>
-
-            </div>
-
-
-            <div class="card-content">
-
-              <span>
-                VEHÍCULO DE LANZAMIENTO
+              <span class="section-tag orange">
+                05 / COHETES
               </span>
 
-              <h3>
-                EXPLORER
-              </h3>
+              <h2>
+                DESCUBRE LO QUE<br>
+                ESTÁ <span>ALLÁ ARRIBA.</span>
+              </h2>
 
-              <p>
-                Una misión conceptual pensada para explorar nuevas
-                posibilidades.
-              </p>
+            </div>
+
+            <div class="rocket-counter">
+
+              <strong>03</strong>
+
+              <span>
+                OBJETOS DE MISIÓN
+              </span>
+
+            </div>
+
+          </div>
 
 
-              <button
-                class="details-btn btn-more-info-rockets"
-                type="button"
-                aria-pressed="false">
+          <div class="rocket-cards">
 
-                VER DETALLES +
+            <article
+              class="rocket-card featured reveal"
+              data-rocket="explorer">
 
-              </button>
+              <div class="card-number">01</div>
 
+              <div class="card-art" aria-hidden="true">
+                <div class="mini-rocket"></div>
+              </div>
 
-              <div
-                class="rocket-details"
-                hidden>
+              <div class="card-content">
 
-                Ideal para hablar sobre etapas de lanzamiento,
-                carga y exploración.
+                <span>VEHÍCULO DE LANZAMIENTO</span>
+
+                <h3>EXPLORER</h3>
+
+                <p>
+                  Una misión conceptual pensada para explorar nuevas
+                  posibilidades.
+                </p>
+
+                <button
+                  class="details-btn btn-more-info-rockets"
+                  type="button"
+                  aria-pressed="false"
+                  aria-controls="details-explorer">
+
+                  VER DETALLES +
+
+                </button>
+
+                <div
+                  class="rocket-details"
+                  id="details-explorer"
+                  hidden>
+
+                  Ideal para hablar sobre etapas de lanzamiento,
+                  carga y exploración.
+
+                </div>
 
               </div>
 
-            </div>
-
-          </article>
+            </article>
 
 
+            <article
+              class="rocket-card reveal"
+              data-rocket="lunar">
 
-          <article
-            class="rocket-card reveal"
-            data-rocket="lunar">
+              <div class="card-number">02</div>
 
-            <div class="card-number">
-              02
-            </div>
+              <div class="card-art moon-art" aria-hidden="true">
+                ◐
+              </div>
 
+              <div class="card-content">
 
-            <div class="card-art moon-art">
-              ◐
-            </div>
+                <span>ESPACIO PROFUNDO</span>
 
+                <h3>LUNAR</h3>
 
-            <div class="card-content">
+                <p>
+                  Una misión conceptual hacia nuestro satélite natural.
+                </p>
 
-              <span>
-                ESPACIO PROFUNDO
-              </span>
+                <button
+                  class="details-btn btn-more-info-rockets"
+                  type="button"
+                  aria-pressed="false"
+                  aria-controls="details-lunar">
 
-              <h3>
-                LUNAR
-              </h3>
+                  VER DETALLES +
 
-              <p>
-                Una misión conceptual hacia nuestro satélite natural.
-              </p>
+                </button>
 
+                <div
+                  class="rocket-details"
+                  id="details-lunar"
+                  hidden>
 
-              <button
-                class="details-btn btn-more-info-rockets"
-                type="button"
-                aria-pressed="false">
+                  Representa misiones de investigación y exploración lunar.
 
-                VER DETALLES +
-
-              </button>
-
-
-              <div
-                class="rocket-details"
-                hidden>
-
-                Representa misiones de investigación y exploración lunar.
+                </div>
 
               </div>
 
-            </div>
-
-          </article>
+            </article>
 
 
+            <article
+              class="rocket-card reveal"
+              data-rocket="vector">
 
-          <article
-            class="rocket-card reveal"
-            data-rocket="vector">
+              <div class="card-number">03</div>
 
-            <div class="card-number">
-              03
-            </div>
+              <div class="card-art orbit-art" aria-hidden="true">
+                ◎
+              </div>
 
+              <div class="card-content">
 
-            <div class="card-art orbit-art">
-              ◎
-            </div>
+                <span>ORBITAL</span>
 
+                <h3>VECTOR</h3>
 
-            <div class="card-content">
+                <p>
+                  Precisión, velocidad y control para conquistar la órbita.
+                </p>
 
-              <span>
-                ORBITAL
-              </span>
+                <button
+                  class="details-btn btn-more-info-rockets"
+                  type="button"
+                  aria-pressed="false"
+                  aria-controls="details-vector">
 
-              <h3>
-                VECTOR
-              </h3>
+                  VER DETALLES +
 
-              <p>
-                Precisión, velocidad y control para conquistar la órbita.
-              </p>
+                </button>
 
+                <div
+                  class="rocket-details"
+                  id="details-vector"
+                  hidden>
 
-              <button
-                class="details-btn btn-more-info-rockets"
-                type="button"
-                aria-pressed="false">
+                  Representa una misión orbital centrada en precisión
+                  y control.
 
-                VER DETALLES +
-
-              </button>
-
-
-              <div
-                class="rocket-details"
-                hidden>
-
-                Representa una misión orbital centrada en precisión
-                y control.
+                </div>
 
               </div>
 
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-      </div>
-
-
-      <div
-        class="section mission-log"
-        id="misiones">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-
-            <span class="section-tag orange">
-              05 / BITÁCORA DE MISIÓN
-            </span>
-
-            <h2>
-              DE LA IDEA<br>
-              <span>A LA ÓRBITA.</span>
-            </h2>
+            </article>
 
           </div>
 
-          <p>
-            Cada misión espacial sigue una secuencia de decisiones,
-            pruebas y operaciones para convertir una idea en exploración.
-          </p>
-
-        </div>
-
-        <div class="mission-steps">
-
-          <article class="mission-step reveal">
-            <span class="mission-step-number">01 / DISEÑO</span>
-            <div class="mission-step-icon" aria-hidden="true">⌁</div>
-            <h3>PREPARAR</h3>
-            <p>
-              Se define el objetivo y se preparan el vehículo,
-              los instrumentos y el plan de vuelo.
-            </p>
-          </article>
-
-          <article class="mission-step reveal">
-            <span class="mission-step-number">02 / LANZAMIENTO</span>
-            <div class="mission-step-icon" aria-hidden="true">↗</div>
-            <h3>DESPEGAR</h3>
-            <p>
-              El cohete inicia su ascenso y lleva la carga hacia
-              la trayectoria prevista.
-            </p>
-          </article>
-
-          <article class="mission-step reveal">
-            <span class="mission-step-number">03 / EXPLORACIÓN</span>
-            <div class="mission-step-icon" aria-hidden="true">◎</div>
-            <h3>DESCUBRIR</h3>
-            <p>
-              Ya en su destino, la misión recopila información
-              y amplía nuestro conocimiento del espacio.
-            </p>
-          </article>
-
         </div>
 
       </div>
+
+
+      <!-- =========================
+           BITÁCORA DE MISIÓN
+      ========================== -->
+
+      <div class="section mission-log" id="misiones">
+
+        <div class="container">
+
+          <div class="section-head">
+
+            <div>
+
+              <span class="section-tag orange">
+                05 / BITÁCORA DE MISIÓN
+              </span>
+
+              <h2>
+                DE LA IDEA<br>
+                <span>A LA ÓRBITA.</span>
+              </h2>
+
+            </div>
+
+            <p>
+              Cada misión espacial sigue una secuencia de decisiones,
+              pruebas y operaciones para convertir una idea en exploración.
+            </p>
+
+          </div>
+
+
+          <div class="mission-steps">
+
+            <article class="mission-step reveal">
+
+              <span class="mission-step-number">
+                01 / DISEÑO
+              </span>
+
+              <div class="mission-step-icon" aria-hidden="true">
+                ⌁
+              </div>
+
+              <h3>PREPARAR</h3>
+
+              <p>
+                Se define el objetivo y se preparan el vehículo,
+                los instrumentos y el plan de vuelo.
+              </p>
+
+            </article>
+
+
+            <article class="mission-step reveal">
+
+              <span class="mission-step-number">
+                02 / LANZAMIENTO
+              </span>
+
+              <div class="mission-step-icon" aria-hidden="true">
+                ↗
+              </div>
+
+              <h3>DESPEGAR</h3>
+
+              <p>
+                El cohete inicia su ascenso y lleva la carga hacia
+                la trayectoria prevista.
+              </p>
+
+            </article>
+
+
+            <article class="mission-step reveal">
+
+              <span class="mission-step-number">
+                03 / EXPLORACIÓN
+              </span>
+
+              <div class="mission-step-icon" aria-hidden="true">
+                ◎
+              </div>
+
+              <h3>DESCUBRIR</h3>
+
+              <p>
+                Ya en su destino, la misión recopila información
+                y amplía nuestro conocimiento del espacio.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -895,12 +884,9 @@
          6. TESTIMONIOS
     ========================== -->
 
-    <section
-      class="section testimonials"
-      id="testimonios">
+    <section class="section testimonials" id="testimonios">
 
       <div class="container">
-
 
         <div class="center">
 
@@ -908,12 +894,10 @@
             06 / TESTIMONIOS
           </span>
 
-
           <h2>
             VOCES DE LA<br>
             <span>TRIPULACIÓN.</span>
           </h2>
-
 
           <p>
             Opiniones de personas que conectan con la exploración,
@@ -923,78 +907,54 @@
         </div>
 
 
-
         <div class="testimonial-grid">
-
 
           <article class="testimonial-card reveal">
 
-            <div class="quote">
-              “
-            </div>
+            <div class="quote" aria-hidden="true">“</div>
 
             <p>
               La página hace que el tema de los cohetes se sienta
               moderno y fácil de explorar.
             </p>
 
-            <strong>
-              Laura M.
-            </strong>
+            <strong>Laura M.</strong>
 
-            <span>
-              Tripulante / Exploradora
-            </span>
+            <span>Tripulante / Exploradora</span>
 
           </article>
 
 
+          <article class="testimonial-card featured-testimonial reveal">
 
-          <article
-            class="testimonial-card featured-testimonial reveal">
-
-            <div class="quote">
-              “
-            </div>
+            <div class="quote" aria-hidden="true">“</div>
 
             <p>
               Me gustó la combinación entre la identidad de SPAXE
               y la información espacial.
             </p>
 
-            <strong>
-              Daniel R.
-            </strong>
+            <strong>Daniel R.</strong>
 
-            <span>
-              Tripulante / Tecnología
-            </span>
+            <span>Tripulante / Tecnología</span>
 
           </article>
 
 
-
           <article class="testimonial-card reveal">
 
-            <div class="quote">
-              “
-            </div>
+            <div class="quote" aria-hidden="true">“</div>
 
             <p>
               El diseño transmite movimiento, energía y una sensación
               clara de exploración.
             </p>
 
-            <strong>
-              Camila P.
-            </strong>
+            <strong>Camila P.</strong>
 
-            <span>
-              Tripulante / Diseño
-            </span>
+            <span>Tripulante / Diseño</span>
 
           </article>
-
 
         </div>
 
@@ -1003,17 +963,13 @@
     </section>
 
 
-
     <!-- =========================
-         7. CTA 2 + HUBSPOT
+         7. REGISTRO HUBSPOT
     ========================== -->
 
-    <section
-      class="hubspot-section"
-      id="registro">
+    <section class="hubspot-section" id="registro">
 
       <div class="container hubspot-grid">
-
 
         <div class="hubspot-info reveal">
 
@@ -1021,12 +977,10 @@
             07 / ÚNETE A LA MISIÓN
           </span>
 
-
           <h2>
             LISTO PARA<br>
             IR MÁS <span>ALLÁ.</span>
           </h2>
-
 
           <p>
             Déjanos tus datos y forma parte de la comunidad SPAXE.
@@ -1057,31 +1011,23 @@
         </div>
 
 
-
-        <div
-          class="hubspot-form-container reveal">
-
+        <div class="hubspot-form-container reveal">
 
           <div class="form-header">
 
-            <span>
-              TRANSMISIÓN SPAXE
-            </span>
+            <span>TRANSMISIÓN SPAXE</span>
 
-            <strong>
-              REGISTRO / 001
-            </strong>
+            <strong>REGISTRO / 001</strong>
 
           </div>
 
 
-          <!-- HubSpot -->
+          <!-- FORMULARIO HUBSPOT -->
 
           <script
             src="https://js.hsforms.net/forms/embed/52142627.js"
             defer>
           </script>
-
 
           <div
             class="hs-form-frame"
@@ -1090,26 +1036,20 @@
             data-portal-id="52142627">
           </div>
 
-
         </div>
-
 
       </div>
 
     </section>
 
 
-
     <!-- =========================
-         8. FAQ
+         8. PREGUNTAS FRECUENTES
     ========================== -->
 
-    <section
-      class="section faq-section"
-      id="faq">
+    <section class="section faq-section" id="faq">
 
       <div class="container faq-layout">
-
 
         <div>
 
@@ -1117,12 +1057,10 @@
             08 / PREGUNTAS
           </span>
 
-
           <h2>
             ANTES DE<br>
             <span>DESPEGAR.</span>
           </h2>
-
 
           <p class="faq-intro">
             Resuelve las dudas más comunes sobre SPAXE y esta
@@ -1130,7 +1068,6 @@
           </p>
 
         </div>
-
 
 
         <div class="faq-list">
@@ -1141,19 +1078,18 @@
             <button
               class="faq-question"
               type="button"
-              aria-expanded="false">
+              aria-expanded="false"
+              aria-controls="faq-answer-1">
 
               ¿Qué es SPAXE?
 
-              <span>
-                +
-              </span>
+              <span aria-hidden="true">+</span>
 
             </button>
 
-
             <div
               class="faq-answer"
+              id="faq-answer-1"
               hidden>
 
               SPAXE es una propuesta de identidad y contenido
@@ -1164,25 +1100,23 @@
           </article>
 
 
-
           <article class="faq-item reveal">
 
             <button
               class="faq-question"
               type="button"
-              aria-expanded="false">
+              aria-expanded="false"
+              aria-controls="faq-answer-2">
 
               ¿Qué puedo encontrar en la página?
 
-              <span>
-                +
-              </span>
+              <span aria-hidden="true">+</span>
 
             </button>
 
-
             <div
               class="faq-answer"
+              id="faq-answer-2"
               hidden>
 
               Encontrarás información conceptual sobre cohetes,
@@ -1193,25 +1127,23 @@
           </article>
 
 
-
           <article class="faq-item reveal">
 
             <button
               class="faq-question"
               type="button"
-              aria-expanded="false">
+              aria-expanded="false"
+              aria-controls="faq-answer-3">
 
               ¿Para qué sirve el formulario?
 
-              <span>
-                +
-              </span>
+              <span aria-hidden="true">+</span>
 
             </button>
 
-
             <div
               class="faq-answer"
+              id="faq-answer-3"
               hidden>
 
               Sirve para registrarte y recibir novedades de SPAXE.
@@ -1222,25 +1154,23 @@
           </article>
 
 
-
           <article class="faq-item reveal">
 
             <button
               class="faq-question"
               type="button"
-              aria-expanded="false">
+              aria-expanded="false"
+              aria-controls="faq-answer-4">
 
               ¿SPAXE es una empresa aeroespacial?
 
-              <span>
-                +
-              </span>
+              <span aria-hidden="true">+</span>
 
             </button>
 
-
             <div
               class="faq-answer"
+              id="faq-answer-4"
               hidden>
 
               No. Para este proyecto, SPAXE es una propuesta digital
@@ -1258,17 +1188,13 @@
     </section>
 
 
-
     <!-- =========================
          9. PRE-FOOTER
     ========================== -->
 
-    <section
-      class="pre-footer"
-      id="prefooter">
+    <section class="pre-footer" id="prefooter">
 
       <div class="container pre-footer-inner">
-
 
         <div>
 
@@ -1276,19 +1202,16 @@
             09 / PRÓXIMA MISIÓN
           </span>
 
-
           <h2>
             LA PRÓXIMA<br>
             <span>FRONTERA.</span>
           </h2>
-
 
           <p>
             Explora. Descubre. Innova.
           </p>
 
         </div>
-
 
         <a
           class="button primary cta-track"
@@ -1298,7 +1221,6 @@
           Volver al inicio ↑
 
         </a>
-
 
       </div>
 
@@ -1313,10 +1235,11 @@
 
       <div class="container footer-grid">
 
-
         <img
           src="assets/logo-spaxe.png"
-          alt="SPAXE"
+          alt="Logo de SPAXE"
+          width="130"
+          height="auto"
           loading="lazy"
           decoding="async">
 
@@ -1343,7 +1266,9 @@
             class="download-logo-btn"
             href="assets/logo-spaxe.png"
             download="logo-spaxe.png">
+
             Descargar logo ↓
+
           </a>
 
         </div>
@@ -1353,13 +1278,16 @@
           SPAXE · 2026
         </span>
 
-
       </div>
 
     </footer>
 
-
   </main>
+
+
+  <!-- =========================
+       BOTÓN WHATSAPP
+  ========================== -->
 
   <a
     class="whatsapp-button cta-track"
@@ -1373,41 +1301,77 @@
       viewBox="0 0 24 24"
       aria-hidden="true"
       focusable="false">
+
       <path d="M12 2a9.8 9.8 0 0 0-8.4 14.8L2 22l5.4-1.4A10 10 0 1 0 12 2Zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.8.9-3.1-.2-.3A8 8 0 1 1 12 19.8Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.2.4.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .2-1.1-.1-.1-.3-.2-.5-.3Z"/>
+
     </svg>
 
     <span>WhatsApp</span>
 
   </a>
 
-  <!-- Script del Banner de Cookies -->
-  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-  <script>
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#000000",
-            "text": "#ffffff"
-          },
-          "button": {
-            "background": "#25d366",
-            "text": "#ffffff"
-          }
-        },
-        "theme": "classic",
-        "position": "bottom-right",
-        "content": {
-          "message": "Este sitio web utiliza cookies para garantizar que obtengas la mejor experiencia en Spaxe.",
-          "dismiss": "Aceptar todas",
-          "link": "Leer más",
-          "href": "https://montielsv.github.io/Landingpagexpace/"
-        }
-      })
-    });
+
+  <!-- =========================
+       COOKIES
+  ========================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+    data-cfasync="false">
   </script>
+
+  <script>
+
+    window.addEventListener("load", function() {
+
+      if (!window.cookieconsent) return;
+
+      window.cookieconsent.initialise({
+
+        palette: {
+
+          popup: {
+            background: "#000000",
+            text: "#ffffff"
+          },
+
+          button: {
+            background: "#25d366",
+            text: "#ffffff"
+          }
+
+        },
+
+        theme: "classic",
+
+        position: "bottom-right",
+
+        content: {
+
+          message:
+            "Este sitio web utiliza cookies para garantizar que obtengas la mejor experiencia en SPAXE.",
+
+          dismiss: "Aceptar todas",
+
+          link: "Leer más",
+
+          href: "https://montielsv.github.io/Landingpagexpace/"
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+
+  <!-- =========================
+       JAVASCRIPT PRINCIPAL
+  ========================== -->
 
   <script src="script.js" defer></script>
 
 </body>
 </html>
+```

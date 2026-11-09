@@ -1726,3 +1726,95 @@ footer{
   }
 
 }
+
+/* =========================
+   OPTIMIZACIÓN SEO Y LIGHTHOUSE
+========================== */
+
+/* Evitar contenido invisible si JavaScript falla */
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animaciones únicamente cuando JS está disponible */
+
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.js-enabled .reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mejorar interacción con teclado */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+
+/* Optimización de imágenes */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Evitar animaciones innecesarias */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal,
+  .js-enabled .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+/* Optimización de móviles */
+
+@media (max-width: 600px) {
+
+  .hero-grid,
+  .mission-grid,
+  .hubspot-grid,
+  .faq-layout {
+    gap: 30px;
+  }
+
+  .rocket-stage {
+    max-width: 100%;
+  }
+
+}
+
+/* Mejorar estabilidad visual */
+
+.rocket-card,
+.value-card,
+.testimonial-card {
+  min-width: 0;
+}
+
+html {
+  scroll-padding-top: 85px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
