@@ -2012,7 +2012,7 @@ a {
   letter-spacing: .13em;
 }
 
-.subscription-intro h3 {
+.subscription-intro h1 {
   margin: 0;
   color: #101a2b;
   font-family: Orbitron, sans-serif;
@@ -2022,7 +2022,7 @@ a {
   letter-spacing: -.045em;
 }
 
-.subscription-intro h3 span {
+.subscription-intro h1 span {
   color: var(--blue);
 }
 
@@ -2388,7 +2388,7 @@ body.intro-active { overflow: hidden; }
   padding-bottom: 12px;
 }
 
-.hero-subscription-card .subscription-intro h3 {
+.hero-subscription-card .subscription-intro h1 {
   font-size: clamp(21px, 2.4vw, 27px);
 }
 
@@ -2501,8 +2501,8 @@ body.intro-active { overflow: hidden; }
 .hero-subscription-only .subscription-form { display: grid; gap: 17px; }
 .hero-subscription-only .subscription-intro { text-align: center; margin: 0 0 5px; }
 .hero-subscription-only .subscription-kicker { color: #ff9a4d; }
-.hero-subscription-only .subscription-intro h3 { color: #fff; font-size: clamp(25px, 4vw, 34px); }
-.hero-subscription-only .subscription-intro h3 span { color: #55a0ff; }
+.hero-subscription-only .subscription-intro h1 { color: #fff; font-size: clamp(25px, 4vw, 34px); }
+.hero-subscription-only .subscription-intro h1 span { color: #55a0ff; }
 .hero-subscription-only .subscription-intro p { max-width: 410px; margin: 13px auto 0; color: #b2c2d9; font-size: 13px; }
 .hero-subscription-only .subscription-form label { color: #d7e3f4; font-weight: 700; }
 .hero-subscription-only .subscription-form input { width: 100%; min-height: 59px; border: 1px solid #385273; border-radius: 10px; background: rgba(5,13,25,.86); color: #fff; }
