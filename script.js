@@ -193,10 +193,21 @@ const subscriptionForm = document.getElementById("subscriptionForm");
 const subscriptionEmail = document.getElementById("subscriptionEmail");
 const subscriptionSubmit = document.getElementById("subscriptionSubmit");
 const subscriptionMessage = document.getElementById("subscriptionMessage");
+const subscriptionSuccess = document.getElementById("subscriptionSuccess");
+const subscriptionAgain = document.getElementById("subscriptionAgain");
 
 let subscriptionStarted = false;
 
 if (subscriptionForm) {
+  if (subscriptionAgain) {
+    subscriptionAgain.addEventListener("click", () => {
+      subscriptionForm.classList.remove("is-complete");
+      subscriptionSuccess.hidden = true;
+      subscriptionMessage.textContent = "";
+      subscriptionEmail.focus();
+    });
+  }
+
   subscriptionForm.addEventListener("focusin", event => {
     if (
       !subscriptionStarted &&
@@ -235,15 +246,27 @@ if (subscriptionForm) {
     subscriptionMessage.className = "subscription-message";
 
     try {
+      // Inicializar aquí también garantiza que el SDK defer ya esté disponible.
+      window.emailjs.init({
+        publicKey: EMAILJS_PUBLIC_KEY
+      });
+
       await window.emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         subscriptionForm
       );
 
-      subscriptionMessage.textContent =
-        "¡Suscripción realizada! Revisa tu correo, pronto recibirás noticias de SPAXE.";
-      subscriptionMessage.className = "subscription-message success";
+      subscriptionMessage.textContent = "";
+      subscriptionMessage.className = "subscription-message";
+      subscriptionForm.classList.add("is-complete");
+      if (subscriptionSuccess) {
+        subscriptionSuccess.hidden = false;
+        subscriptionSuccess.classList.remove("success-replay");
+        void subscriptionSuccess.offsetWidth;
+        subscriptionSuccess.classList.add("success-replay");
+      }
+      launchSuccessConfetti();
 
       pushEvent("emailjs_form_submit", {
         form_id: "spaxe_subscription",
@@ -269,6 +292,73 @@ if (subscriptionForm) {
       subscriptionSubmit.disabled = false;
       subscriptionSubmit.textContent = "SUSCRIBIRME A SPAXE →";
     }
+  });
+}
+
+
+/* =========================
+   EXPERIENCIA DE ENTRADA SPAXE
+========================== */
+
+const motionEnabled = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (motionEnabled && !sessionStorage.getItem("spaxeIntroSeen")) {
+  const intro = document.createElement("div");
+  intro.className = "space-intro";
+  intro.setAttribute("aria-label", "Bienvenido a SPAXE");
+  intro.innerHTML = `
+    <div class="intro-stars" aria-hidden="true"></div>
+    <div class="intro-content">
+      <span class="intro-orbit"><i></i><b>✦</b></span>
+      <span class="intro-overline">PREPARANDO SISTEMAS</span>
+      <strong class="intro-logo">SPA<span>XE</span></strong>
+      <span class="intro-caption">TU UNIVERSO ESTÁ A PUNTO DE EXPANDIRSE</span>
+      <div class="intro-progress"><i></i></div>
+    </div>`;
+  document.body.appendChild(intro);
+  document.body.classList.add("intro-active");
+  sessionStorage.setItem("spaxeIntroSeen", "1");
+  window.setTimeout(() => {
+    intro.classList.add("intro-finished");
+    document.body.classList.remove("intro-active");
+    window.setTimeout(() => intro.remove(), 900);
+  }, 1900);
+}
+
+/* Pequeña celebración visual después de una suscripción confirmada */
+function launchSuccessConfetti() {
+  if (!motionEnabled || !subscriptionSuccess) return;
+  const colors = ["#2784F5", "#fd7600", "#ffffff", "#78b7ff"];
+  for (let i = 0; i < 24; i++) {
+    const particle = document.createElement("span");
+    particle.className = "success-particle";
+    particle.style.setProperty("--particle-angle", `${(360 / 24) * i}deg`);
+    particle.style.setProperty("--particle-distance", `${55 + Math.random() * 95}px`);
+    particle.style.setProperty("--particle-color", colors[i % colors.length]);
+    subscriptionSuccess.appendChild(particle);
+    window.setTimeout(() => particle.remove(), 1100);
+  }
+}
+
+/* Parallax sutil en los elementos decorativos del hero */
+if (motionEnabled && window.matchMedia("(pointer: fine)").matches) {
+  const hero = document.querySelector(".hero");
+  const planets = document.querySelectorAll(".hero .planet");
+  hero?.addEventListener("pointermove", event => {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    planets.forEach((planet, index) => {
+      const depth = (index + 1) * 10;
+      planet.style.setProperty("--parallax-x", `${x * depth}px`);
+      planet.style.setProperty("--parallax-y", `${y * depth}px`);
+    });
+  });
+  hero?.addEventListener("pointerleave", () => {
+    planets.forEach(planet => {
+      planet.style.setProperty("--parallax-x", "0px");
+      planet.style.setProperty("--parallax-y", "0px");
+    });
   });
 }
 
@@ -305,7 +395,8 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     }
   );
 
-  revealElements.forEach(element => {
+  revealElements.forEach((element, index) => {
+    element.style.setProperty("--reveal-delay", `${(index % 4) * 95}ms`);
     revealObserver.observe(element);
   });
 }

@@ -2150,3 +2150,107 @@ a {
     transition: none;
   }
 }
+
+/* =====================================================
+   SPAXE EXPERIENCE 2.0 — CINEMATIC MOTION SYSTEM
+===================================================== */
+
+:root {
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+body.intro-active { overflow: hidden; }
+
+.space-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 48%, #132744 0%, #080d18 48%, #03050a 100%);
+  opacity: 1;
+  transition: opacity .75s ease, transform .9s var(--motion-ease);
+}
+.space-intro::before,
+.space-intro::after {
+  content: "";
+  position: absolute;
+  width: min(72vw, 680px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(39,132,245,.17);
+  border-radius: 50%;
+  box-shadow: 0 0 70px rgba(39,132,245,.08), inset 0 0 70px rgba(39,132,245,.06);
+  animation: introOrbit 12s linear infinite;
+}
+.space-intro::after { width: min(92vw, 900px); animation-duration: 20s; border-style: dashed; opacity: .45; }
+.intro-stars { position: absolute; inset: 0; opacity: .6; background-image: radial-gradient(#fff 1px, transparent 1px), radial-gradient(#75baff 1px, transparent 1px); background-size: 83px 83px, 137px 137px; background-position: 12px 18px, 55px 71px; animation: starDrift 18s linear infinite; }
+.intro-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; animation: introRise 1s var(--motion-ease) both; }
+.intro-orbit { position: relative; display: grid; place-items: center; width: 76px; height: 76px; margin-bottom: 23px; border: 1px solid rgba(39,132,245,.55); border-radius: 50%; color: var(--orange); font-size: 25px; box-shadow: 0 0 34px rgba(39,132,245,.24); animation: introPulse 2s ease-in-out infinite; }
+.intro-orbit i { position: absolute; inset: -8px; border: 1px solid rgba(253,118,0,.35); border-radius: 50%; transform: rotateX(68deg) rotate(-25deg); }
+.intro-orbit b { font-weight: 400; animation: introSpin 5s linear infinite; }
+.intro-overline, .intro-caption { color: #91a6c4; font-size: 9px; letter-spacing: .28em; }
+.intro-logo { margin: 9px 0 12px; color: #fff; font: 800 clamp(42px, 9vw, 76px)/1 Orbitron, sans-serif; letter-spacing: .08em; text-shadow: 0 0 32px rgba(39,132,245,.35); }
+.intro-logo span { color: var(--blue); }
+.intro-progress { width: 190px; height: 2px; margin-top: 28px; overflow: hidden; background: rgba(255,255,255,.13); }
+.intro-progress i { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, var(--blue), #8bc4ff, var(--orange)); transform-origin: left; animation: introLoad 1.65s var(--motion-ease) both; }
+.space-intro.intro-finished { opacity: 0; transform: scale(1.06); pointer-events: none; }
+
+@keyframes introLoad { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes introRise { from { opacity: 0; transform: translateY(28px) scale(.96); filter: blur(8px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@keyframes introOrbit { to { transform: rotate(360deg); } }
+@keyframes introSpin { to { transform: rotate(360deg); } }
+@keyframes introPulse { 50% { box-shadow: 0 0 52px rgba(39,132,245,.42); } }
+@keyframes starDrift { to { background-position: 95px 101px, 180px 190px; } }
+
+/* Entrada del contenido y aparición escalonada */
+.js-enabled .reveal { opacity: 0; transform: translate3d(0, 34px, 0) scale(.985); filter: blur(5px); transition: opacity .85s var(--motion-ease), transform .85s var(--motion-ease), filter .85s var(--motion-ease); transition-delay: var(--reveal-delay, 0ms); }
+.js-enabled .reveal.show { opacity: 1; transform: translate3d(0,0,0) scale(1); filter: blur(0); }
+.hero-copy.reveal-on-load { animation: heroCinematic .95s .18s var(--motion-ease) both; }
+@keyframes heroCinematic { from { opacity: 0; transform: translateY(35px); filter: blur(7px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+.hero .planet { transform: translate(var(--parallax-x, 0), var(--parallax-y, 0)); transition: transform .5s var(--motion-ease); }
+
+/* Profundidad e interacción de tarjetas */
+.rocket-card, .testimonial-card, .mission-step { transition: transform .45s var(--motion-ease), border-color .35s ease, box-shadow .45s ease; }
+.rocket-card:hover, .testimonial-card:hover, .mission-step:hover { transform: translateY(-8px); border-color: rgba(39,132,245,.48); box-shadow: 0 22px 55px rgba(0,0,0,.24), 0 0 28px rgba(39,132,245,.09); }
+.nav-link-track { transition: color .25s ease, text-shadow .25s ease; }
+.nav-link-track:hover { text-shadow: 0 0 18px rgba(39,132,245,.55); }
+
+/* Estado de agradecimiento tras el envío real de EmailJS */
+.subscription-success { position: relative; overflow: visible; padding: 26px 8px 8px; text-align: center; }
+.subscription-success[hidden] { display: none; }
+.subscription-form.is-complete > .subscription-intro,
+.subscription-form.is-complete > .subscription-field,
+.subscription-form.is-complete > #subscriptionSubmit { display: none; }
+.success-orbit { position: relative; display: grid; place-items: center; width: 92px; height: 92px; margin: 0 auto 22px; border: 1px solid rgba(39,132,245,.55); border-radius: 50%; background: radial-gradient(circle, rgba(39,132,245,.2), rgba(39,132,245,.02) 68%); box-shadow: 0 0 45px rgba(39,132,245,.18); }
+.success-orbit::before, .success-orbit::after { content: ""; position: absolute; inset: -9px; border: 1px solid rgba(253,118,0,.3); border-radius: 50%; animation: successOrbit 7s linear infinite; }
+.success-orbit::after { inset: -17px; border-color: rgba(39,132,245,.2); animation-direction: reverse; animation-duration: 11s; }
+.success-orbit i { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 12px var(--orange); }
+.success-orbit i:nth-of-type(1) { top: -10px; left: 42px; }
+.success-orbit i:nth-of-type(2) { right: -10px; bottom: 23px; background: var(--blue); box-shadow: 0 0 12px var(--blue); }
+.success-orbit i:nth-of-type(3) { bottom: -7px; left: 24px; }
+.success-check { display: grid; place-items: center; width: 49px; height: 49px; border-radius: 50%; background: linear-gradient(135deg, #2784f5, #55a5ff); color: white; font-size: 27px; font-weight: 800; box-shadow: 0 8px 28px rgba(39,132,245,.4); animation: checkPop .65s cubic-bezier(.16,1.4,.4,1) both; }
+.success-eyebrow { color: var(--orange); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+.subscription-success h3 { margin: 12px 0; color: white; font: 800 clamp(23px, 5vw, 32px)/1.2 Orbitron, sans-serif; }
+.subscription-success h3 span { color: var(--blue); }
+.subscription-success p { max-width: 390px; margin: 0 auto 23px; color: #9aa8bd; font-size: 13px; line-height: 1.8; }
+.success-again { padding: 12px 17px; border: 1px solid rgba(39,132,245,.45); border-radius: 7px; background: rgba(39,132,245,.1); color: #b9d8ff; font-size: 9px; font-weight: 800; letter-spacing: .1em; cursor: pointer; transition: background .25s, transform .25s; }
+.success-again:hover { background: rgba(39,132,245,.22); transform: translateY(-2px); }
+.success-replay { animation: thankYouIn .75s var(--motion-ease) both; }
+.success-particle { position: absolute; z-index: 5; top: 70px; left: 50%; width: 6px; height: 9px; border-radius: 2px; background: var(--particle-color); pointer-events: none; animation: particleBurst .95s ease-out forwards; transform: rotate(var(--particle-angle)) translateY(0); }
+@keyframes successOrbit { to { transform: rotate(360deg); } }
+@keyframes checkPop { from { opacity: 0; transform: scale(.25) rotate(-35deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes thankYouIn { from { opacity: 0; transform: translateY(24px) scale(.96); filter: blur(6px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@keyframes particleBurst { to { opacity: 0; transform: rotate(var(--particle-angle)) translateY(calc(var(--particle-distance) * -1)) scale(.35); } }
+
+@media (max-width: 600px) {
+  .space-intro::before { width: 88vw; }
+  .intro-caption { max-width: 250px; line-height: 1.8; }
+  .subscription-success { padding-top: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .space-intro { display: none !important; }
+  .js-enabled .reveal { opacity: 1; transform: none; filter: none; }
+}
