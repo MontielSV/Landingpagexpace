@@ -192,6 +192,7 @@ const registrationSection = document.getElementById("registro");
 const subscriptionForm = document.getElementById("subscriptionForm");
 const subscriptionEmail = document.getElementById("subscriptionEmail");
 const subscriptionSubmit = document.getElementById("subscriptionSubmit");
+const subscriptionSubmitLabel = subscriptionSubmit?.querySelector("span:first-child");
 const subscriptionMessage = document.getElementById("subscriptionMessage");
 const subscriptionSuccess = document.getElementById("subscriptionSuccess");
 const subscriptionAgain = document.getElementById("subscriptionAgain");
@@ -241,7 +242,8 @@ if (subscriptionForm) {
     }
 
     subscriptionSubmit.disabled = true;
-    subscriptionSubmit.textContent = "ENVIANDO...";
+    if (subscriptionSubmitLabel) subscriptionSubmitLabel.textContent = "ENVIANDO...";
+    else subscriptionSubmit.textContent = "ENVIANDO...";
     subscriptionMessage.textContent = "";
     subscriptionMessage.className = "subscription-message";
 
@@ -290,7 +292,8 @@ if (subscriptionForm) {
 
     } finally {
       subscriptionSubmit.disabled = false;
-      subscriptionSubmit.textContent = "SUSCRIBIRME A SPAXE →";
+      if (subscriptionSubmitLabel) subscriptionSubmitLabel.textContent = "UNIRME A LA MISIÓN";
+      else subscriptionSubmit.textContent = "SUSCRIBIRME A SPAXE →";
     }
   });
 }

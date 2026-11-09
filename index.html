@@ -144,112 +144,62 @@
 <!-- =========================
          2. HERO
     ========================== -->
-<section class="hero" id="inicio">
-<div aria-hidden="true" class="planet planet-one"></div>
-<div aria-hidden="true" class="planet planet-two"></div>
-<div aria-hidden="true" class="orbit orbit-one"></div>
-<div aria-hidden="true" class="orbit orbit-two"></div>
-<div class="container hero-grid">
-<div class="hero-copy reveal-on-load">
-<span class="kicker">
-            MARCA · ESPACIO · TECNOLOGÍA
-          </span>
-<h1>
-            VE MÁS<br/>
-<span>ALLÁ.</span>
-</h1>
-<p>
-            SPAXE convierte la exploración espacial en una experiencia visual
-            y educativa, con información sobre cohetes, tecnología y nuevas
-            fronteras.
-          </p>
-<div class="hero-actions">
-<a class="button primary cta-track" data-cta="hero_explorar" href="#cohetes">
+<!-- =========================
+     INICIO: FORMULARIO COMO PROTAGONISTA
+========================== -->
+<section class="hero hero-subscription-only" id="inicio">
+  <div aria-hidden="true" class="planet planet-one"></div>
+  <div aria-hidden="true" class="planet planet-two"></div>
+  <div aria-hidden="true" class="orbit orbit-one"></div>
+  <div aria-hidden="true" class="orbit orbit-two"></div>
+  <div aria-hidden="true" class="hero-moon"></div>
+  <div aria-hidden="true" class="hero-satellite">✦</div>
 
-              Descubrir SPAXE <b aria-hidden="true">↗</b>
-</a>
-<a class="button ghost cta-track" data-cta="hero_registro" href="#registro">
+  <div class="container hero-grid hero-form-layout">
+    <div class="hubspot-form-container hero-subscription-card" id="registro">
+      <div class="form-header">
+        <span>TRANSMISIÓN SPAXE</span>
+        <strong>REGISTRO / 001</strong>
+      </div>
 
-              Únete a la misión
+      <div class="hero-form-brand" aria-label="SPAXE">
+        <span>SPAXE</span><i>✦</i>
+      </div>
 
-            </a>
-</div><div class="hubspot-form-container reveal hero-subscription-card" id="registro">
-<div class="form-header">
-<span>TRANSMISIÓN SPAXE</span>
-<strong>REGISTRO / 001</strong>
-</div>
-<!-- FORMULARIO DE SUSCRIPCIÓN EMAILJS -->
-<form autocomplete="on" class="subscription-form" id="subscriptionForm">
-<div class="subscription-intro">
-<span class="subscription-kicker">TU PRÓXIMA MISIÓN COMIENZA AQUÍ</span>
-<h3>RECIBE LA <span>SEÑAL.</span></h3>
-<p>Únete a la comunidad SPAXE y recibe novedades del universo espacial directamente en tu correo.</p>
-</div>
-<div class="subscription-field">
-<label for="subscriptionEmail">Correo electrónico</label>
-<input autocomplete="email" id="subscriptionEmail" inputmode="email" maxlength="254" name="email" placeholder="nombre@correo.com" required="" type="email"/>
-</div>
-<button id="subscriptionSubmit" type="submit">
-<span>UNIRME A LA MISIÓN</span>
-<span aria-hidden="true" class="subscription-button-arrow">↗</span>
-</button>
-<p aria-live="polite" class="subscription-message" id="subscriptionMessage" role="status">
-</p>
-<div aria-live="polite" class="subscription-success" hidden="" id="subscriptionSuccess">
-<div aria-hidden="true" class="success-orbit">
-<span class="success-check">✓</span>
-<i></i><i></i><i></i>
-</div>
-<span class="success-eyebrow">TRANSMISIÓN CONFIRMADA</span>
-<h3>¡ESTÁS A <span>BORDO!</span></h3>
-<p>Gracias por unirte a SPAXE. Tu próxima aventura comienza ahora. Revisa tu correo: tenemos una señal para ti.</p>
-<button class="success-again" id="subscriptionAgain" type="button">VOLVER AL FORMULARIO ↗</button>
-</div>
-</form>
-<small class="subscription-privacy">
-<span aria-hidden="true">✦</span> Tu correo se utilizará únicamente para enviarte novedades y contenido de SPAXE.
-          </small>
-</div>
-<div class="hero-data">
-<div>
-<strong>01</strong>
-<span>Creatividad</span>
-</div>
-<div>
-<strong>02</strong>
-<span>Tecnología</span>
-</div>
-<div>
-<strong>03</strong>
-<span>Exploración</span>
-</div>
-</div>
-</div>
-<div aria-label="Ilustración de un cohete de SPAXE en el espacio" class="rocket-stage" role="img">
-<div aria-hidden="true" class="rocket-glow"></div>
-<div aria-hidden="true" class="rocket">
-<div class="rocket-nose"></div>
-<div class="rocket-body">
-<div class="window"></div>
-<div class="rocket-word">
-                SPAXE
-              </div>
-<div class="rocket-line"></div>
-</div>
-<div class="fin fin-left"></div>
-<div class="fin fin-right"></div>
-<div class="engine engine-one"></div>
-<div class="engine engine-two"></div>
-<div class="flame"></div>
-</div>
-<div class="stage-label">
-<span>MISIÓN</span>
-<strong>
-              EXPLORACIÓN / 001
-            </strong>
-</div>
-</div>
-</div>
+      <form autocomplete="on" class="subscription-form" id="subscriptionForm">
+        <div class="subscription-intro">
+          <span class="subscription-kicker">TU PRÓXIMA MISIÓN COMIENZA AQUÍ</span>
+          <h3>RECIBE LA <span>SEÑAL.</span></h3>
+          <p>Únete a la comunidad SPAXE y recibe novedades del universo espacial directamente en tu correo.</p>
+        </div>
+
+        <div class="subscription-field">
+          <label for="subscriptionEmail">CORREO ELECTRÓNICO</label>
+          <input autocomplete="email" id="subscriptionEmail" inputmode="email" maxlength="254" name="email" placeholder="nombre@correo.com" required type="email"/>
+        </div>
+
+        <button id="subscriptionSubmit" type="submit">
+          <span>UNIRME A LA MISIÓN</span>
+          <span aria-hidden="true" class="subscription-button-arrow">↗</span>
+        </button>
+
+        <p aria-live="polite" class="subscription-message" id="subscriptionMessage" role="status"></p>
+
+        <div aria-live="polite" class="subscription-success" hidden id="subscriptionSuccess">
+          <div aria-hidden="true" class="success-orbit">
+            <span class="success-check">✓</span><i></i><i></i><i></i>
+          </div>
+          <span class="success-eyebrow">TRANSMISIÓN CONFIRMADA</span>
+          <h3>¡ESTÁS A <span>BORDO!</span></h3>
+          <p>Gracias por unirte a SPAXE. Tu próxima aventura comienza ahora. Revisa tu correo: tenemos una señal para ti.</p>
+          <button class="success-again" id="subscriptionAgain" type="button">VOLVER AL FORMULARIO ↗</button>
+        </div>
+      </form>
+
+      <small class="subscription-privacy"><span aria-hidden="true">✦</span> Tu correo se utilizará únicamente para enviarte novedades y contenido de SPAXE.</small>
+      <div class="hero-form-coordinate" aria-hidden="true">COORDENADAS · 00° 00' 00" N</div>
+    </div>
+  </div>
 </section>
 <!-- =========================
          MARQUEE

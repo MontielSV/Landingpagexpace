@@ -2423,3 +2423,120 @@ body.intro-active { overflow: hidden; }
     padding: 20px 16px;
   }
 }
+
+
+/* =====================================================
+   SPAXE 6.0 — INICIO CENTRADO EXCLUSIVAMENTE EN EL FORMULARIO
+===================================================== */
+.hero-subscription-only {
+  min-height: min(850px, calc(100svh - 82px));
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  padding: clamp(34px, 6vh, 72px) 0;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(39,132,245,.17) 0%, rgba(8,11,18,0) 48%),
+    radial-gradient(ellipse at 12% 15%, rgba(253,118,0,.08), transparent 32%),
+    #080b12;
+}
+
+.hero-subscription-only .hero-form-layout {
+  width: min(100% - 36px, 1180px);
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-subscription-only .hero-subscription-card {
+  width: min(100%, 570px);
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(103,157,224,.38);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(17,31,53,.97), rgba(8,17,32,.97));
+  box-shadow: 0 28px 90px rgba(0,0,0,.48), 0 0 55px rgba(39,132,245,.14), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  animation: spaxeFormArrival .9s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-subscription-only .hero-subscription-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -145px;
+  right: -95px;
+  border: 1px solid rgba(39,132,245,.32);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(39,132,245,.035), 0 0 0 38px rgba(39,132,245,.025);
+  pointer-events: none;
+}
+
+.hero-subscription-only .form-header {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(142,174,216,.17);
+}
+.hero-subscription-only .form-header span { color: #a9bddb; }
+.hero-subscription-only .form-header strong { color: #65aaff; }
+
+.hero-form-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 25px 0 20px;
+  color: #fff;
+  font: 900 clamp(27px, 5vw, 39px)/1 Orbitron, sans-serif;
+  letter-spacing: .18em;
+  text-shadow: 0 0 24px rgba(39,132,245,.35);
+}
+.hero-form-brand i { color: #fd7600; font-style: normal; font-size: .72em; }
+
+.hero-subscription-only .subscription-form { display: grid; gap: 17px; }
+.hero-subscription-only .subscription-intro { text-align: center; margin: 0 0 5px; }
+.hero-subscription-only .subscription-kicker { color: #ff9a4d; }
+.hero-subscription-only .subscription-intro h3 { color: #fff; font-size: clamp(25px, 4vw, 34px); }
+.hero-subscription-only .subscription-intro h3 span { color: #55a0ff; }
+.hero-subscription-only .subscription-intro p { max-width: 410px; margin: 13px auto 0; color: #b2c2d9; font-size: 13px; }
+.hero-subscription-only .subscription-form label { color: #d7e3f4; font-weight: 700; }
+.hero-subscription-only .subscription-form input { width: 100%; min-height: 59px; border: 1px solid #385273; border-radius: 10px; background: rgba(5,13,25,.86); color: #fff; }
+.hero-subscription-only .subscription-form input::placeholder { color: #71839c; }
+.hero-subscription-only .subscription-form input:focus { border-color: #55a0ff; box-shadow: 0 0 0 4px rgba(39,132,245,.17); outline: none; }
+.hero-subscription-only .subscription-form button:not(.success-again) { width: 100%; min-height: 59px; border-radius: 10px; }
+.hero-subscription-only .subscription-message { color: #ffb3a9; text-align: center; }
+.hero-subscription-only .subscription-privacy { justify-content: center; color: #91a5c0; text-align: center; }
+.hero-subscription-only .hero-form-coordinate { margin-top: 19px; color: rgba(142,174,216,.48); text-align: center; font: 8px/1.5 Inter, sans-serif; letter-spacing: .2em; }
+
+/* Elementos decorativos: no ocupan espacio ni bloquean el formulario */
+.hero-subscription-only .planet-one { width: 175px; height: 175px; top: 9%; left: 8%; opacity: .48; }
+.hero-subscription-only .planet-two { width: 88px; height: 88px; right: 10%; bottom: 10%; opacity: .42; }
+.hero-subscription-only .orbit-one { width: min(78vw, 900px); height: 230px; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-18deg); opacity: .25; }
+.hero-subscription-only .orbit-two { width: min(90vw, 1050px); height: 330px; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(22deg); opacity: .16; }
+.hero-moon { position: absolute; width: 9px; height: 9px; top: 22%; right: 19%; border-radius: 50%; background: #fff; box-shadow: 0 0 14px 4px rgba(255,255,255,.5); animation: spaxeMoonPulse 3.8s ease-in-out infinite; }
+.hero-satellite { position: absolute; right: 13%; top: 25%; color: #fd9a4d; font-size: 25px; filter: drop-shadow(0 0 12px rgba(253,118,0,.8)); animation: spaxeSatelliteDrift 8s ease-in-out infinite; }
+
+@keyframes spaxeFormArrival { from { opacity: 0; transform: translateY(28px) scale(.97); filter: blur(8px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@keyframes spaxeMoonPulse { 0%,100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.25); } }
+@keyframes spaxeSatelliteDrift { 0%,100% { transform: translate3d(0,0,0) rotate(0); } 50% { transform: translate3d(-20px,18px,0) rotate(28deg); } }
+
+@media (max-width: 700px) {
+  .hero-subscription-only { min-height: calc(100svh - 70px); padding: 34px 0 48px; }
+  .hero-subscription-only .hero-form-layout { width: min(100% - 28px, 570px); }
+  .hero-subscription-only .hero-subscription-card { padding: 23px 19px; border-radius: 17px; }
+  .hero-subscription-only .planet-one { left: -50px; top: 8%; }
+  .hero-subscription-only .planet-two { right: -25px; bottom: 5%; }
+  .hero-satellite { right: 8%; top: 9%; }
+  .hero-subscription-only .form-header span, .hero-subscription-only .form-header strong { font-size: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-subscription-only .hero-subscription-card,
+  .hero-moon,
+  .hero-satellite { animation: none !important; }
+}
