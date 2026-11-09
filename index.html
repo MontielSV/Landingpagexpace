@@ -199,6 +199,42 @@
       <small class="subscription-privacy"><span aria-hidden="true">✦</span> Tu correo se utilizará únicamente para enviarte novedades y contenido de SPAXE.</small>
       <div class="hero-form-coordinate" aria-hidden="true">COORDENADAS · 00° 00' 00" N</div>
     </div>
+
+    <!-- COLUMNA DERECHA: COHETE ANIMADO -->
+    <div class="hero-rocket-column" aria-label="Cohete SPAXE en movimiento">
+      <div class="hero-rocket-glow"></div>
+      <div class="hero-rocket-orbit hero-rocket-orbit-a"></div>
+      <div class="hero-rocket-orbit hero-rocket-orbit-b"></div>
+
+      <div class="hero-rocket">
+        <div class="hero-rocket-flame"></div>
+        <svg viewBox="0 0 240 470" class="hero-rocket-svg" role="img" aria-label="Cohete blanco y azul de SPAXE">
+          <defs>
+            <linearGradient id="spaxeRocketBody" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#8299b7"/><stop offset="32%" stop-color="#ffffff"/>
+              <stop offset="68%" stop-color="#dce9f8"/><stop offset="100%" stop-color="#7189a8"/>
+            </linearGradient>
+            <linearGradient id="spaxeRocketFin" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2784f5"/><stop offset="100%" stop-color="#124a91"/>
+            </linearGradient>
+            <radialGradient id="spaxeRocketWindow">
+              <stop offset="0%" stop-color="#9de2ff"/><stop offset="65%" stop-color="#2784f5"/><stop offset="100%" stop-color="#102d53"/>
+            </radialGradient>
+          </defs>
+          <path d="M79 302 L28 378 L81 359 L105 307Z" fill="url(#spaxeRocketFin)" stroke="#8fc7ff" stroke-width="2"/>
+          <path d="M161 302 L212 378 L159 359 L135 307Z" fill="url(#spaxeRocketFin)" stroke="#8fc7ff" stroke-width="2"/>
+          <path d="M120 17 C82 65 69 124 69 207 L69 326 Q120 353 171 326 L171 207 C171 124 158 65 120 17Z" fill="url(#spaxeRocketBody)" stroke="#d9e9ff" stroke-width="2"/>
+          <path d="M120 17 C99 45 85 78 78 111 Q120 130 162 111 C155 78 141 45 120 17Z" fill="#f4f8ff"/>
+          <path d="M72 228 H168 V250 H72Z" fill="#2784f5"/><path d="M72 258 H168 V265 H72Z" fill="#fd7600"/>
+          <circle cx="120" cy="174" r="28" fill="#17365d" stroke="#fd7600" stroke-width="5"/>
+          <circle cx="120" cy="174" r="19" fill="url(#spaxeRocketWindow)"/><circle cx="113" cy="166" r="6" fill="#fff" opacity=".8"/>
+          <text x="120" y="296" text-anchor="middle" fill="#17365d" font-family="Orbitron, sans-serif" font-size="15" font-weight="900">SPAXE</text>
+          <path d="M95 329 H145 L138 365 H102Z" fill="#536a85" stroke="#c8d9ec" stroke-width="2"/>
+          <path d="M105 358 H135 L130 391 H110Z" fill="#fd7600"/>
+        </svg>
+      </div>
+      <div class="hero-rocket-caption"><span>SPAXE / EXPLORACIÓN</span><strong>MISSION 001</strong></div>
+    </div>
   </div>
 </section>
 <!-- =========================
