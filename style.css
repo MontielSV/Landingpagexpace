@@ -1818,3 +1818,335 @@ button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+
+
+/* =========================
+   EMAILJS - FORMULARIO SPAXE
+========================== */
+
+.subscription-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.subscription-form label {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.subscription-form input {
+  width: 100%;
+  min-height: 52px;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #fff;
+  color: #111827;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+}
+
+.subscription-form input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(39,132,245,.12);
+}
+
+.subscription-form button {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: Orbitron, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.subscription-form button:hover {
+  background: #126ddd;
+  transform: translateY(-2px);
+}
+
+.subscription-form button:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.subscription-message {
+  min-height: 20px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.subscription-message.success {
+  color: #15803d;
+}
+
+.subscription-message.error {
+  color: #dc2626;
+}
+
+.subscription-privacy {
+  display: block;
+  margin-top: 12px;
+  color: #687387;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+@media(max-width:600px) {
+  .subscription-form input,
+  .subscription-form button {
+    min-height: 50px;
+  }
+
+  .hubspot-form-container {
+    min-height: auto;
+  }
+}
+
+
+/* =========================
+   EMAILJS - FORMULARIO SPAXE / DISEÑO DESTACADO
+========================== */
+
+.hubspot-form-container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 0;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(119, 171, 255, .32);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(39,132,245,.12), transparent 34%),
+    linear-gradient(145deg, #ffffff 0%, #f2f6fc 100%);
+  box-shadow: 0 24px 70px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.hubspot-form-container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blue), #64b5ff 58%, var(--orange));
+}
+
+.hubspot-form-container::after {
+  content: "✦";
+  position: absolute;
+  top: 76px;
+  right: 28px;
+  color: rgba(39,132,245,.12);
+  font-size: 72px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.form-header {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 17px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #dce5f1;
+}
+
+.form-header span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #52647c;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.form-header span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34,197,94,.55);
+}
+
+.form-header strong {
+  color: #277fe8;
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.subscription-form {
+  position: relative;
+  z-index: 1;
+  gap: 16px;
+}
+
+.subscription-intro {
+  margin-bottom: 4px;
+}
+
+.subscription-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #e56b16;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.subscription-intro h3 {
+  margin: 0;
+  color: #101a2b;
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.045em;
+}
+
+.subscription-intro h3 span {
+  color: var(--blue);
+}
+
+.subscription-intro p {
+  max-width: 390px;
+  margin: 11px 0 4px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.subscription-field {
+  display: grid;
+  gap: 9px;
+}
+
+.subscription-form label {
+  color: #25344a;
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.subscription-form input {
+  min-height: 58px;
+  padding: 0 17px;
+  border: 1px solid #d3deec;
+  border-radius: 9px;
+  background: rgba(255,255,255,.94);
+  color: #111827;
+  font-size: 14px;
+  box-shadow: inset 0 1px 2px rgba(15,23,42,.03);
+}
+
+.subscription-form input::placeholder {
+  color: #9aa8ba;
+}
+
+.subscription-form input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(39,132,245,.13), 0 8px 22px rgba(39,132,245,.08);
+}
+
+.subscription-form button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 58px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #176fe0, #2784f5 65%, #3995ff);
+  box-shadow: 0 10px 22px rgba(39,132,245,.23);
+  font-size: 10px;
+  letter-spacing: .1em;
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+
+.subscription-form button:hover {
+  background: linear-gradient(100deg, #1262c9, #1977ec 65%, #2784f5);
+  box-shadow: 0 14px 28px rgba(39,132,245,.32);
+  transform: translateY(-3px);
+  filter: saturate(1.1);
+}
+
+.subscription-button-arrow {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.subscription-message {
+  min-height: 20px;
+  padding: 0 2px;
+  font-size: 12px;
+}
+
+.subscription-privacy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 17px;
+  color: #748196;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.subscription-privacy span {
+  color: var(--orange);
+}
+
+@media (max-width: 600px) {
+  .hubspot-form-container {
+    padding: 23px 19px;
+    border-radius: 14px;
+  }
+
+  .form-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-header span,
+  .form-header strong {
+    font-size: 8px;
+  }
+
+  .subscription-form input,
+  .subscription-form button {
+    min-height: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subscription-form button {
+    transition: none;
+  }
+}

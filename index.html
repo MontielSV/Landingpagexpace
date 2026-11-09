@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="preconnect" href="https://js.hs-scripts.com">
-  <link rel="preconnect" href="https://js.hsforms.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <link
@@ -57,6 +57,12 @@
   <!-- CSS principal -->
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- SDK de EmailJS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"
+    defer>
+  </script>
 
   <!-- =========================
        GOOGLE TAG MANAGER
@@ -964,7 +970,7 @@
 
 
     <!-- =========================
-         7. REGISTRO HUBSPOT
+         7. REGISTRO SPAXE / EMAILJS
     ========================== -->
 
     <section class="hubspot-section" id="registro">
@@ -983,8 +989,8 @@
           </h2>
 
           <p>
-            Déjanos tus datos y forma parte de la comunidad SPAXE.
-            Recibe información, novedades y contenido relacionado
+            Déjanos tu correo electrónico y forma parte de la comunidad SPAXE.
+            Recibe un mensaje de bienvenida y novedades relacionadas
             con cohetes y exploración espacial.
           </p>
 
@@ -1022,19 +1028,50 @@
           </div>
 
 
-          <!-- FORMULARIO HUBSPOT -->
+          <!-- FORMULARIO DE SUSCRIPCIÓN EMAILJS -->
 
-          <script
-            src="https://js.hsforms.net/forms/embed/52142627.js"
-            defer>
-          </script>
+          <form
+            class="subscription-form"
+            id="subscriptionForm"
+            autocomplete="on">
 
-          <div
-            class="hs-form-frame"
-            data-region="na1"
-            data-form-id="889ebe02-3396-450a-ab3d-69142b2e5820"
-            data-portal-id="52142627">
-          </div>
+            <div class="subscription-intro">
+              <span class="subscription-kicker">TU PRÓXIMA MISIÓN COMIENZA AQUÍ</span>
+              <h3>RECIBE LA <span>SEÑAL.</span></h3>
+              <p>Únete a la comunidad SPAXE y recibe novedades del universo espacial directamente en tu correo.</p>
+            </div>
+
+            <div class="subscription-field">
+              <label for="subscriptionEmail">Correo electrónico</label>
+
+            <input
+              type="email"
+              id="subscriptionEmail"
+              name="email"
+              placeholder="nombre@correo.com"
+              autocomplete="email"
+              inputmode="email"
+              maxlength="254"
+              required>
+            </div>
+
+            <button type="submit" id="subscriptionSubmit">
+              <span>UNIRME A LA MISIÓN</span>
+              <span class="subscription-button-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <p
+              class="subscription-message"
+              id="subscriptionMessage"
+              role="status"
+              aria-live="polite">
+            </p>
+
+          </form>
+
+          <small class="subscription-privacy">
+            <span aria-hidden="true">✦</span> Tu correo se utilizará únicamente para enviarte novedades y contenido de SPAXE.
+          </small>
 
         </div>
 
@@ -1135,7 +1172,7 @@
               aria-expanded="false"
               aria-controls="faq-answer-3">
 
-              ¿Para qué sirve el formulario?
+              ¿Para qué sirve el formulario de suscripción?
 
               <span aria-hidden="true">+</span>
 
@@ -1146,8 +1183,8 @@
               id="faq-answer-3"
               hidden>
 
-              Sirve para registrarte y recibir novedades de SPAXE.
-              Los datos enviados se gestionan mediante HubSpot CRM.
+              Sirve para suscribirte con tu correo electrónico y recibir
+              un mensaje de bienvenida y novedades de SPAXE mediante EmailJS.
 
             </div>
 

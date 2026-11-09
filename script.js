@@ -1,5 +1,20 @@
-
 "use strict";
+
+/* =========================
+   CONFIGURACIÓN EMAILJS
+========================== */
+
+const EMAILJS_PUBLIC_KEY = "Wqdt_1DgoeOwM_XH4";
+const EMAILJS_SERVICE_ID = "service_8y4ss2b";
+const EMAILJS_TEMPLATE_ID = "template_vf1uo67";
+
+// Inicializar EmailJS cuando el SDK esté disponible.
+if (window.emailjs) {
+  window.emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY
+  });
+}
+
 
 /* =========================
    DATA LAYER
@@ -111,7 +126,6 @@ document.querySelectorAll(".details-btn").forEach(button => {
 
     button.setAttribute("aria-pressed", String(isOpen));
     card.classList.toggle("selected", isOpen);
-
     details.hidden = !isOpen;
 
     button.textContent = isOpen
@@ -141,7 +155,6 @@ faqButtons.forEach(button => {
 
     const isOpen = button.getAttribute("aria-expanded") === "true";
 
-    // Cerrar las demás preguntas
     faqButtons.forEach(otherButton => {
       if (otherButton === button) return;
 
@@ -151,26 +164,17 @@ faqButtons.forEach(button => {
         .closest(".faq-item")
         ?.querySelector(".faq-answer");
 
-      if (otherAnswer) {
-        otherAnswer.hidden = true;
-      }
+      if (otherAnswer) otherAnswer.hidden = true;
 
       const otherIcon = otherButton.querySelector("span");
-
-      if (otherIcon) {
-        otherIcon.textContent = "+";
-      }
+      if (otherIcon) otherIcon.textContent = "+";
     });
 
-    // Cambiar estado de la pregunta seleccionada
     button.setAttribute("aria-expanded", String(!isOpen));
     answer.hidden = isOpen;
 
     const icon = button.querySelector("span");
-
-    if (icon) {
-      icon.textContent = isOpen ? "+" : "−";
-    }
+    if (icon) icon.textContent = isOpen ? "+" : "−";
 
     pushEvent("faq_open", {
       question: button.textContent.trim(),
@@ -181,48 +185,92 @@ faqButtons.forEach(button => {
 
 
 /* =========================
-   HUBSPOT
+   FORMULARIO EMAILJS
 ========================== */
 
-const hubspotSection = document.getElementById("registro");
+const registrationSection = document.getElementById("registro");
+const subscriptionForm = document.getElementById("subscriptionForm");
+const subscriptionEmail = document.getElementById("subscriptionEmail");
+const subscriptionSubmit = document.getElementById("subscriptionSubmit");
+const subscriptionMessage = document.getElementById("subscriptionMessage");
 
-let hubspotStarted = false;
-let hubspotSubmitted = false;
+let subscriptionStarted = false;
 
-const HUBSPOT_FORM_ID = "889ebe02-3396-450a-ab3d-69142b2e5820";
+if (subscriptionForm) {
+  subscriptionForm.addEventListener("focusin", event => {
+    if (
+      !subscriptionStarted &&
+      event.target === subscriptionEmail
+    ) {
+      subscriptionStarted = true;
 
-hubspotSection?.addEventListener("focusin", event => {
-  const target = event.target;
-
-  if (
-    !hubspotStarted &&
-    target.matches("input, select, textarea")
-  ) {
-    hubspotStarted = true;
-
-    pushEvent("hubspot_form_start", {
-      form_id: HUBSPOT_FORM_ID
-    });
-  }
-});
-
-document.addEventListener("submit", event => {
-  const form = event.target;
-
-  if (
-    !(form instanceof HTMLFormElement) ||
-    !hubspotSection?.contains(form) ||
-    hubspotSubmitted
-  ) {
-    return;
-  }
-
-  hubspotSubmitted = true;
-
-  pushEvent("hubspot_form_submit", {
-    form_id: HUBSPOT_FORM_ID
+      pushEvent("emailjs_form_start", {
+        form_id: "spaxe_subscription"
+      });
+    }
   });
-});
+
+  subscriptionForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    if (!subscriptionForm.reportValidity()) return;
+
+    if (!window.emailjs) {
+      subscriptionMessage.textContent =
+        "No se pudo cargar el servicio de correo. Recarga la página e inténtalo nuevamente.";
+      subscriptionMessage.className = "subscription-message error";
+      return;
+    }
+
+    if (EMAILJS_PUBLIC_KEY === "TU_PUBLIC_KEY") {
+      subscriptionMessage.textContent =
+        "Falta configurar la Public Key de EmailJS en script.js.";
+      subscriptionMessage.className = "subscription-message error";
+      return;
+    }
+
+    subscriptionSubmit.disabled = true;
+    subscriptionSubmit.textContent = "ENVIANDO...";
+    subscriptionMessage.textContent = "";
+    subscriptionMessage.className = "subscription-message";
+
+    try {
+      await window.emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        subscriptionForm
+      );
+
+      subscriptionMessage.textContent =
+        "¡Suscripción realizada! Revisa tu correo, pronto recibirás noticias de SPAXE.";
+      subscriptionMessage.className = "subscription-message success";
+
+      pushEvent("emailjs_form_submit", {
+        form_id: "spaxe_subscription",
+        form_status: "success"
+      });
+
+      subscriptionForm.reset();
+      subscriptionStarted = false;
+
+    } catch (error) {
+      console.error("Error al enviar el formulario EmailJS:", error);
+
+      subscriptionMessage.textContent =
+        "No fue posible completar la suscripción. Verifica tu conexión e inténtalo de nuevo.";
+      subscriptionMessage.className = "subscription-message error";
+
+      pushEvent("emailjs_form_submit", {
+        form_id: "spaxe_subscription",
+        form_status: "error"
+      });
+
+    } finally {
+      subscriptionSubmit.disabled = false;
+      subscriptionSubmit.textContent = "SUSCRIBIRME A SPAXE →";
+    }
+  });
+}
 
 
 /* =========================
@@ -236,13 +284,10 @@ const prefersReducedMotion = window.matchMedia(
 ).matches;
 
 if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-
   revealElements.forEach(element => {
     element.classList.add("show");
   });
-
 } else {
-
   document.documentElement.classList.add("js-enabled");
 
   const revealObserver = new IntersectionObserver(
@@ -263,28 +308,22 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
   revealElements.forEach(element => {
     revealObserver.observe(element);
   });
-
 }
 
 
 /* =========================
-   VISTA DEL REGISTRO
+   VISTA DE REGISTRO
 ========================== */
 
-let feedbackShown = false;
+let registrationViewTracked = false;
 
-if (
-  hubspotSection &&
-  "IntersectionObserver" in window
-) {
-
+if (registrationSection && "IntersectionObserver" in window) {
   const registroObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
+        if (!entry.isIntersecting || registrationViewTracked) return;
 
-        if (!entry.isIntersecting || feedbackShown) return;
-
-        feedbackShown = true;
+        registrationViewTracked = true;
 
         pushEvent("registration_section_view", {
           section: "registro"
@@ -293,13 +332,10 @@ if (
         registroObserver.disconnect();
       });
     },
-    {
-      threshold: 0.25
-    }
+    { threshold: 0.25 }
   );
 
-  registroObserver.observe(hubspotSection);
-
+  registroObserver.observe(registrationSection);
 }
 
 
