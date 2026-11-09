@@ -302,6 +302,58 @@ if (subscriptionForm) {
 
 const motionEnabled = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Objetos espaciales que recorren la pantalla sin bloquear clics */
+if (motionEnabled) {
+  const spaceTraffic = document.createElement("div");
+  spaceTraffic.className = "space-traffic";
+  spaceTraffic.setAttribute("aria-hidden", "true");
+  spaceTraffic.innerHTML = `
+    <div class="space-flyby-rocket">
+      <span class="space-rocket-trail"></span>
+      <svg viewBox="0 0 220 92" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="spaxeRocketBody" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset=".52" stop-color="#c9d9ed"/><stop offset="1" stop-color="#6c87a8"/>
+          </linearGradient>
+          <linearGradient id="spaxeRocketFire" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fd7600" stop-opacity="0"/><stop offset=".55" stop-color="#ff9d35"/><stop offset="1" stop-color="#fff3bd"/>
+          </linearGradient>
+        </defs>
+        <g class="rocket-flame">
+          <path d="M42 46 L5 30 Q17 46 5 62 Z" fill="url(#spaxeRocketFire)"/>
+          <path d="M43 46 L17 39 Q25 46 17 53 Z" fill="#fff4ce" opacity=".95"/>
+        </g>
+        <path d="M59 46 Q79 9 143 24 Q174 31 194 46 Q174 61 143 68 Q79 83 59 46Z" fill="url(#spaxeRocketBody)" stroke="#ffffff" stroke-width="1.5"/>
+        <path d="M67 46 Q91 18 143 27 Q122 46 143 65 Q91 74 67 46Z" fill="#2784f5" opacity=".22"/>
+        <path d="M87 23 L70 8 Q67 27 73 35Z" fill="#fd7600" stroke="#ffd0a0" stroke-width="1.5"/>
+        <path d="M87 69 L70 84 Q67 65 73 57Z" fill="#fd7600" stroke="#ffd0a0" stroke-width="1.5"/>
+        <path d="M185 36 Q207 39 216 46 Q207 53 185 56 Q194 46 185 36Z" fill="#fd7600"/>
+        <circle class="rocket-core" cx="112" cy="46" r="12" fill="#15385f" stroke="#2784f5" stroke-width="4"/>
+        <circle cx="108" cy="42" r="3" fill="#d9f0ff" opacity=".9"/>
+        <path d="M147 34 Q164 46 147 58" fill="none" stroke="#fd7600" stroke-width="2" opacity=".8"/>
+      </svg>
+    </div>
+    <div class="space-satellite">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#8fc7ff" stroke-width="2">
+          <path d="M40 28V8M40 52v20M28 40H8M52 40h20"/>
+          <path d="M13 25l15 8M52 47l15 8M55 13l-8 15M25 55l-8 12" opacity=".65"/>
+        </g>
+        <rect x="28" y="28" width="24" height="24" rx="5" fill="#d9eaff" stroke="#2784f5" stroke-width="2"/>
+        <rect x="2" y="31" width="19" height="18" rx="2" fill="#1765bd" stroke="#8fc7ff"/>
+        <path d="M5 31v18M11 31v18M17 31v18" stroke="#8fc7ff" opacity=".7"/>
+        <rect x="59" y="31" width="19" height="18" rx="2" fill="#1765bd" stroke="#8fc7ff"/>
+        <path d="M63 31v18M69 31v18M75 31v18" stroke="#8fc7ff" opacity=".7"/>
+        <circle cx="40" cy="40" r="5" fill="#fd7600"/>
+      </svg>
+    </div>
+    <span class="space-meteor meteor-one"></span>
+    <span class="space-meteor meteor-two"></span>
+    <span class="space-drifting-planet"></span>
+  `;
+  document.body.appendChild(spaceTraffic);
+}
+
 if (motionEnabled && !sessionStorage.getItem("spaxeIntroSeen")) {
   const intro = document.createElement("div");
   intro.className = "space-intro";
