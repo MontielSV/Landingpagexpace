@@ -2012,7 +2012,7 @@ a {
   letter-spacing: .13em;
 }
 
-.subscription-intro h1 {
+.subscription-intro h3 {
   margin: 0;
   color: #101a2b;
   font-family: Orbitron, sans-serif;
@@ -2022,7 +2022,7 @@ a {
   letter-spacing: -.045em;
 }
 
-.subscription-intro h1 span {
+.subscription-intro h3 span {
   color: var(--blue);
 }
 
@@ -2388,7 +2388,7 @@ body.intro-active { overflow: hidden; }
   padding-bottom: 12px;
 }
 
-.hero-subscription-card .subscription-intro h1 {
+.hero-subscription-card .subscription-intro h3 {
   font-size: clamp(21px, 2.4vw, 27px);
 }
 
@@ -2501,8 +2501,8 @@ body.intro-active { overflow: hidden; }
 .hero-subscription-only .subscription-form { display: grid; gap: 17px; }
 .hero-subscription-only .subscription-intro { text-align: center; margin: 0 0 5px; }
 .hero-subscription-only .subscription-kicker { color: #ff9a4d; }
-.hero-subscription-only .subscription-intro h1 { color: #fff; font-size: clamp(25px, 4vw, 34px); }
-.hero-subscription-only .subscription-intro h1 span { color: #55a0ff; }
+.hero-subscription-only .subscription-intro h3, .hero-subscription-only .subscription-intro h1 { color: #fff; font-size: clamp(25px, 4vw, 34px); }
+.hero-subscription-only .subscription-intro h3 span, .hero-subscription-only .subscription-intro h1 span { color: #55a0ff; }
 .hero-subscription-only .subscription-intro p { max-width: 410px; margin: 13px auto 0; color: #b2c2d9; font-size: 13px; }
 .hero-subscription-only .subscription-form label { color: #d7e3f4; font-weight: 700; }
 .hero-subscription-only .subscription-form input { width: 100%; min-height: 59px; border: 1px solid #385273; border-radius: 10px; background: rgba(5,13,25,.86); color: #fff; }
@@ -2542,95 +2542,17 @@ body.intro-active { overflow: hidden; }
 }
 
 
-/* =====================================================
-   SPAXE - HERO EN DOS COLUMNAS: FORMULARIO + COHETE
-===================================================== */
-.hero-subscription-only .hero-form-layout {
-  width: min(100% - 48px, 1240px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
-  align-items: center;
-  justify-content: stretch;
-  gap: clamp(28px, 5vw, 76px);
-  min-height: 590px;
-}
-.hero-subscription-only .hero-subscription-card {
-  width: 100%;
-  max-width: 590px;
-  justify-self: start;
-  margin: 0;
-}
-.hero-rocket-column {
-  position: relative;
-  min-height: 550px;
-  display: grid;
-  place-items: center;
-  isolation: isolate;
-  overflow: visible;
-}
-.hero-rocket-glow {
-  position: absolute;
-  width: min(80%, 390px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(39,132,245,.24), rgba(39,132,245,.06) 48%, transparent 72%);
-  filter: blur(12px);
-  z-index: -2;
-  animation: rocketGlowPulse 4s ease-in-out infinite alternate;
-}
-.hero-rocket-orbit {
-  position: absolute;
-  width: min(100%, 470px);
-  height: 170px;
-  border: 1px solid rgba(104,169,255,.25);
-  border-radius: 50%;
-  transform: rotate(-25deg);
-  z-index: -1;
-}
-.hero-rocket-orbit-a { animation: rocketOrbit 16s linear infinite; }
-.hero-rocket-orbit-b { width: min(88%, 410px); height: 230px; transform: rotate(38deg); border-color: rgba(253,118,0,.17); animation: rocketOrbit 22s linear infinite reverse; }
-.hero-rocket {
-  position: relative;
-  width: clamp(210px, 24vw, 310px);
-  transform-origin: 50% 58%;
-  animation: rocketHover 4.2s ease-in-out infinite;
-  filter: drop-shadow(0 18px 28px rgba(0,0,0,.42)) drop-shadow(0 0 18px rgba(39,132,245,.22));
-}
-.hero-rocket-svg { display: block; width: 100%; height: auto; overflow: visible; }
-.hero-rocket-flame {
-  position: absolute; z-index: -1; left: 50%; top: 78%;
-  width: 25%; height: 31%; transform: translateX(-50%);
-  transform-origin: 50% 0;
-  background: linear-gradient(180deg, #fff6b0 0%, #ffb02e 38%, #fd7600 72%, transparent 100%);
-  clip-path: polygon(25% 0,75% 0,100% 38%,65% 100%,50% 76%,35% 100%,0 38%);
-  filter: blur(2px) drop-shadow(0 0 18px rgba(253,118,0,.85));
-  animation: rocketFlame  .16s ease-in-out infinite alternate;
-}
-.hero-rocket-caption {
-  position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 7px;
-  color: #8fa8c8; font: 9px/1.4 Inter, sans-serif; letter-spacing: .22em; white-space: nowrap;
-}
-.hero-rocket-caption strong { color: #fd9347; font-family: Orbitron, sans-serif; letter-spacing: .16em; }
-@keyframes rocketHover { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-20px) rotate(2deg); } }
-@keyframes rocketFlame { from { transform: translateX(-50%) scaleY(.82) scaleX(.88); opacity: .82; } to { transform: translateX(-50%) scaleY(1.16) scaleX(1.08); opacity: 1; } }
-@keyframes rocketGlowPulse { from { opacity: .55; transform: scale(.9); } to { opacity: 1; transform: scale(1.08); } }
-@keyframes rocketOrbit { to { rotate: 360deg; } }
-@media (max-width: 900px) {
-  .hero-subscription-only .hero-form-layout { grid-template-columns: minmax(0, 1fr) minmax(230px, .8fr); gap: 20px; width: min(100% - 32px, 820px); }
-  .hero-rocket-column { min-height: 430px; }
-  .hero-rocket { width: clamp(180px, 26vw, 245px); }
-}
-@media (max-width: 700px) {
-  .hero-subscription-only { padding: 36px 0 50px; }
-  .hero-subscription-only .hero-form-layout { display: flex; flex-direction: column; gap: 18px; width: min(100% - 28px, 570px); min-height: auto; }
-  .hero-subscription-only .hero-subscription-card { max-width: none; }
-  .hero-rocket-column { width: 100%; min-height: 350px; margin-top: 2px; }
-  .hero-rocket { width: 190px; }
-  .hero-rocket-caption { bottom: 0; }
-  .hero-rocket-orbit { width: 300px; height: 115px; }
-  .hero-rocket-orbit-b { width: 270px; height: 160px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-rocket, .hero-rocket-flame, .hero-rocket-glow, .hero-rocket-orbit { animation: none !important; }
-}
+/* SEO / HERO: heading semántico y composición formulario + cohete */
+.seo-hero-title { color:#fff; font-size:clamp(25px,4vw,34px); line-height:1.2; text-align:center; margin:0; font-family:Orbitron, sans-serif; }
+.seo-hero-title span { color:#55a0ff; }
+.hero-subscription-only .hero-form-layout { display:grid; grid-template-columns:minmax(0,570px) minmax(260px,1fr); gap:clamp(28px,5vw,80px); justify-content:space-between; }
+.hero-subscription-only .hero-subscription-card { width:100%; }
+.hero-rocket-column { min-height:440px; position:relative; display:flex; align-items:center; justify-content:center; isolation:isolate; }
+.hero-rocket { position:relative; z-index:2; width:min(100%,300px); height:auto; overflow:visible; filter:drop-shadow(0 20px 35px rgba(39,132,245,.25)); animation:spaxeRocketFloat 5s ease-in-out infinite; }
+.rocket-glow { position:absolute; width:230px; height:230px; border-radius:50%; background:rgba(39,132,245,.18); filter:blur(38px); }
+.rocket-orbit { position:absolute; width:320px; height:150px; border:1px solid rgba(104,171,255,.32); border-radius:50%; transform:rotate(-25deg); }
+.rocket-orbit-two { width:390px; height:205px; transform:rotate(28deg); opacity:.55; }
+.rocket-caption { position:absolute; bottom:18px; color:#8eadd4; font:700 10px/1.5 Inter,sans-serif; letter-spacing:.22em; text-align:center; }
+@keyframes spaxeRocketFloat { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-17px) rotate(2deg)} }
+@media(max-width:800px){ .hero-subscription-only .hero-form-layout{grid-template-columns:1fr;max-width:570px}.hero-rocket-column{min-height:330px}.hero-rocket{width:210px}.rocket-orbit{width:260px;height:120px}.rocket-orbit-two{width:310px;height:160px}.rocket-caption{bottom:0} }
+@media(prefers-reduced-motion:reduce){.hero-rocket{animation:none}}

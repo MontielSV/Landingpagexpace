@@ -1,14 +1,16 @@
 {
-  "name": "SPAXE | Exploración espacial",
+  "name": "SPAXE | Cohetes y exploración espacial",
   "short_name": "SPAXE",
-  "description": "Cohetes, tecnología espacial y exploración del universo.",
   "start_url": "/Landingpagexpace/",
-  "scope": "/Landingpagexpace/",
   "display": "standalone",
   "background_color": "#080b12",
   "theme_color": "#080b12",
-  "lang": "es-CO",
   "icons": [
-    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    {
+      "src": "/Landingpagexpace/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }
